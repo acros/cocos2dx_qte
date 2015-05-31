@@ -144,7 +144,9 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\Classes\Entity\Entity.cpp" />
     <ClCompile Include="..\Classes\Entity\Ground.cpp" />
     <ClCompile Include="..\Classes\Entity\Soldier.cpp" />
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\GameWorld.cpp" />
+    <ClCompile Include="..\Classes\QTE\QTESystem.cpp" />
+    <ClCompile Include="..\Classes\Scene\MainGameScene.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -154,8 +156,10 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\Classes\Entity\EntityUtils.h" />
     <ClInclude Include="..\Classes\Entity\Ground.h" />
     <ClInclude Include="..\Classes\Entity\Soldier.h" />
-    <ClInclude Include="..\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\GameWorld.h" />
     <ClInclude Include="..\Classes\Predefines.h" />
+    <ClInclude Include="..\Classes\QTE\QTESystem.h" />
+    <ClInclude Include="..\Classes\Scene\MainGameScene.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>

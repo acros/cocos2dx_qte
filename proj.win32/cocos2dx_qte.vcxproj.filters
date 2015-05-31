@@ -16,15 +16,18 @@
     <Filter Include="src\Entity">
       <UniqueIdentifier>{ad814445-3794-423a-85ec-1a42e344cf4e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\QTE">
+      <UniqueIdentifier>{b87f5ac3-149e-4662-9fc2-74776d654c8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Scene">
+      <UniqueIdentifier>{a40f2829-89bc-4ec5-9118-bdd3da714821}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>win32</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\AppDelegate.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\EngineEx\Animate3DWithEvent.cpp">
@@ -39,15 +42,21 @@
     <ClCompile Include="..\Classes\Entity\Soldier.cpp">
       <Filter>src\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\QTE\QTESystem.cpp">
+      <Filter>src\QTE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameWorld.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Scene\MainGameScene.cpp">
+      <Filter>src\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
       <Filter>win32</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\AppDelegate.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\Predefines.h">
@@ -67,6 +76,15 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Entity\EntityUtils.h">
       <Filter>src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QTE\QTESystem.h">
+      <Filter>src\QTE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameWorld.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scene\MainGameScene.h">
+      <Filter>src\Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
