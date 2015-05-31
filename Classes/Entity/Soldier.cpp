@@ -1,6 +1,6 @@
 #include "cocos2d.h"
 #include "Soldier.h"
-#include "Animate3DWithEvent.h"
+#include "EngineEx/Animate3DWithEvent.h"
 
 USING_NS_CC;
 

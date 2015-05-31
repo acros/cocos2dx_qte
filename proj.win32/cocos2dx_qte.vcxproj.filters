@@ -10,6 +10,12 @@
     <Filter Include="src">
       <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\EngineEx">
+      <UniqueIdentifier>{3ce017cc-2e15-4bf8-b9cd-261288c61a8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Entity">
+      <UniqueIdentifier>{ad814445-3794-423a-85ec-1a42e344cf4e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -21,6 +27,18 @@
     <ClCompile Include="..\Classes\HelloWorldScene.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\EngineEx\Animate3DWithEvent.cpp">
+      <Filter>src\EngineEx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entity\Entity.cpp">
+      <Filter>src\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entity\Ground.cpp">
+      <Filter>src\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entity\Soldier.cpp">
+      <Filter>src\Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -31,6 +49,24 @@
     </ClInclude>
     <ClInclude Include="..\Classes\HelloWorldScene.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Predefines.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\EngineEx\Animate3DWithEvent.h">
+      <Filter>src\EngineEx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entity\Entity.h">
+      <Filter>src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entity\Ground.h">
+      <Filter>src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entity\Soldier.h">
+      <Filter>src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entity\EntityUtils.h">
+      <Filter>src\Entity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
