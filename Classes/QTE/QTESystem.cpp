@@ -22,7 +22,7 @@ void QteSystem::destroy()
 
 QteSystem::QteSystem() :mActive(false)
 {
-
+	initWithFile();
 }
 
 QteSystem::~QteSystem()
@@ -32,10 +32,26 @@ QteSystem::~QteSystem()
 
 void QteSystem::trigger(const std::string& qteName)
 {
-	assert(false);
+	assert(!mActive);
+
+	mActive = true;
+
+
 }
 
 void QteSystem::forceFinish()
+{
+	//Force to end QTE
+/*	finish();*/
+}
+
+void QteSystem::initWithFile()
+{
+	assert(m_QTEmap.empty());
+
+}
+
+void QteSystem::finish()
 {
 
 }

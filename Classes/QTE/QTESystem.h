@@ -25,10 +25,17 @@ public:
 
 
 protected:
+	void initWithFile();
+	void finish();
+
 	bool					mActive;
 
 	RefPtr<Layer>			mLayer;
 	RefPtr<QteHandler>		mHander;
+
+	std::map<std::string, QteHandler*>	m_QTEmap;
+
+
 
 	static QteSystem*	sInstance;
 };

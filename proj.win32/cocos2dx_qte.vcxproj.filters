@@ -22,6 +22,12 @@
     <Filter Include="src\Scene">
       <UniqueIdentifier>{a40f2829-89bc-4ec5-9118-bdd3da714821}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\QTE\QTE_Handler">
+      <UniqueIdentifier>{0af9c6d4-1a08-4d59-82bb-41088b6fdd9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\QTE\QTE_Layer">
+      <UniqueIdentifier>{3689f44a-e47c-441c-a9b0-c13fc281c4a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -50,6 +56,15 @@
     </ClCompile>
     <ClCompile Include="..\Classes\Scene\MainGameScene.cpp">
       <Filter>src\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QTE\QteHandler.cpp">
+      <Filter>src\QTE\QTE_Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QTE\QteLayer.cpp">
+      <Filter>src\QTE\QTE_Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QTE\QteInfo.cpp">
+      <Filter>src\QTE</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +100,15 @@
     </ClInclude>
     <ClInclude Include="..\Classes\Scene\MainGameScene.h">
       <Filter>src\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QTE\QteHandler.h">
+      <Filter>src\QTE\QTE_Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QTE\QteLayer.h">
+      <Filter>src\QTE\QTE_Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QTE\QteInfo.h">
+      <Filter>src\QTE</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
