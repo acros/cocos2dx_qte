@@ -18,6 +18,7 @@ bool QteLayer::init()
 
 	//Load this layer content
 
+	return true;
 }
 
 void QteLayer::onGuiEvent()

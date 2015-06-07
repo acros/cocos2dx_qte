@@ -3,6 +3,21 @@
 
 USING_NS_CC;
 
+#if defined( _DEBUG )
+#define	BUILD_DEBUG	"DEBUG"
+#else
+#define	BUILD_DEBUG "RELEASE"
+#endif
+
+class GameVersion {
+public:
+	GameVersion(void) { 
+		sprintf(text, " [%s - %s] [%s][%s]", __DATE__, __TIME__, BUILD_DEBUG,cocos2dVersion());
+	}
+
+	char	text[256];
+}	gGameVersion;
+
 AppDelegate::AppDelegate() {
 
 }
@@ -34,7 +49,12 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-        glview = GLViewImpl::create("cocos2d-x QTE");
+		glview = GLViewImpl::create("cocos2d-x QTE" 
+#if CC_TARGET_PLATFORM == CC_PLATFORM_WIN32
+			+ std::string(gGameVersion.text)
+#endif
+			);
+
         director->setOpenGLView(glview);
     }
 

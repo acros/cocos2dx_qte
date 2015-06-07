@@ -10,3 +10,8 @@ QteHandler::~QteHandler()
 {
 
 }
+
+void QteHandler::update(float dt)
+{
+
+}
