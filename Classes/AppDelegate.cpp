@@ -24,6 +24,7 @@ AppDelegate::AppDelegate() {
 
 AppDelegate::~AppDelegate() 
 {
+	mGameWorld.quitGame();
 }
 
 //if you want a different context,just modify the value of glContextAttrs

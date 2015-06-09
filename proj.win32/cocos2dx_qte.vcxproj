@@ -146,8 +146,10 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\Classes\Entity\Soldier.cpp" />
     <ClCompile Include="..\Classes\GameWorld.cpp" />
     <ClCompile Include="..\Classes\QTE\QteHandler.cpp" />
+    <ClCompile Include="..\Classes\QTE\QteHandlerStandard.cpp" />
     <ClCompile Include="..\Classes\QTE\QteInfo.cpp" />
     <ClCompile Include="..\Classes\QTE\QteLayer.cpp" />
+    <ClCompile Include="..\Classes\QTE\QteLayerStandard.cpp" />
     <ClCompile Include="..\Classes\QTE\QTESystem.cpp" />
     <ClCompile Include="..\Classes\Scene\MainGameScene.cpp" />
     <ClCompile Include="main.cpp" />
@@ -162,8 +164,10 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\Classes\GameWorld.h" />
     <ClInclude Include="..\Classes\Predefines.h" />
     <ClInclude Include="..\Classes\QTE\QteHandler.h" />
+    <ClInclude Include="..\Classes\QTE\QteHandlerStandard.h" />
     <ClInclude Include="..\Classes\QTE\QteInfo.h" />
     <ClInclude Include="..\Classes\QTE\QteLayer.h" />
+    <ClInclude Include="..\Classes\QTE\QteLayerStandard.h" />
     <ClInclude Include="..\Classes\QTE\QTESystem.h" />
     <ClInclude Include="..\Classes\Scene\MainGameScene.h" />
     <ClInclude Include="main.h" />

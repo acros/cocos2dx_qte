@@ -3,6 +3,11 @@
 
 #include "base/ccConfig.h"
 
+enum class QTE_TYPE
+{
+	QTE_Normal,
+};
+
 class QteInfo{
 	friend class QteHandler;
 	friend class QteSystem;
@@ -12,6 +17,8 @@ CC_CONSTRUCTOR_ACCESS:
 	~QteInfo();
 	
 protected:
+
+	QTE_TYPE mType;
 
 	//The total time of this QTE
 	float	mDuration;

@@ -9,15 +9,19 @@ class MainGameScene : public cocos2d::Scene
 {
 CC_CONSTRUCTOR_ACCESS:
 	virtual bool init()override;
+	MainGameScene()	{}
+	~MainGameScene();
 
 public:
 	CREATE_FUNC(MainGameScene);
 
-	void gameExitMsgCallback(cocos2d::Ref* pSender);
     
 
 protected:
+	void update(float dt)override;
+
 	RefPtr<Layer>	mGameLayer;
+	RefPtr<Layer>	mUiLayer;
 
 };
 

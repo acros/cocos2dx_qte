@@ -9,13 +9,14 @@ class QteHandler;
 
 class QteLayer : public Layer{
 CC_CONSTRUCTOR_ACCESS:
-	QteLayer(QteHandler* handler);
+	QteLayer();
 	virtual ~QteLayer();
 
-	virtual bool init()override;
+//	virtual bool init()override;
 
 public:
-
+	void prepare(QteHandler* handler);
+	virtual void begin();
 
 protected:
 	//Player take action on GUI layer

@@ -60,7 +60,7 @@ void Soldier::movePos(float deltaMove)
 	m_Appearence->setPosition(m_Pos);
 }
 
-//TODO: 检测连击触发的正确性
+//TODO: Check the combo
 void Soldier::doAttack()
 {
 	if (m_ComboStage == CS_IDLE )

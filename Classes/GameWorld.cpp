@@ -13,8 +13,6 @@ GameWorld::~GameWorld()
 void GameWorld::createGame()
 {
 	mCurrScene = MainGameScene::create();
-	QteSystem::create();
-	
 }
 
 void GameWorld::runGame()
@@ -24,8 +22,6 @@ void GameWorld::runGame()
 
 void GameWorld::quitGame()
 {
-	QteSystem::destroy();
-
 	mCurrScene = nullptr;
 }
 
