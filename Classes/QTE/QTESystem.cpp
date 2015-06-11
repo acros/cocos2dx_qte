@@ -28,6 +28,7 @@ QteSystem::QteSystem(Node* node)
 	: mState(QTE_STATE::QS_INACTIVE)
 	, mSceneNode(node)
 	, mCurrInfo(nullptr)
+	, mPreSetInfo(nullptr)
 {
 	//TODO: load qte info
 }
@@ -44,10 +45,12 @@ QteSystem::~QteSystem()
 
 void QteSystem::trigger(const std::string& qteName)
 {
-	//TODO: debaug test
-	auto info = new QteInfo();
-	info->mType = QTE_TYPE::QTE_Normal;
-	trigger(info);
+	assert(mPreSetInfo == nullptr);
+
+	//TODO: how we set the params ?
+	mPreSetInfo = new QteInfo();
+	mPreSetInfo->mType = QTE_TYPE::QTE_Normal;
+	trigger(mPreSetInfo);
 }
 
 void QteSystem::trigger(const QteInfo* info)
@@ -82,7 +85,11 @@ void QteSystem::finish()
 	mState = QTE_STATE::QS_INACTIVE;
 
 	mCurrInfo = nullptr;
-
+	if (mPreSetInfo != nullptr)
+	{
+		delete mPreSetInfo;
+		mPreSetInfo = nullptr;
+	}
 
 	mLayer->removeFromParent();
 	assert(mLayer->getReferenceCount() == 1);
@@ -122,6 +129,6 @@ void QteSystem::finishing()
 
 	mState = QTE_STATE::QS_FREEZE;
 
-	//TODO: can delay QTE close
+	//TODO:  delay to close QTE
 	finish();
 }

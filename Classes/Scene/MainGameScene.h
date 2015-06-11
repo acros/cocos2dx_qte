@@ -15,9 +15,16 @@ CC_CONSTRUCTOR_ACCESS:
 public:
 	CREATE_FUNC(MainGameScene);
 
-    
 
 protected:
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+	void enableDebugInput();
+
+	void onKeyPress(EventKeyboard::KeyCode code, Event* ev);
+	void onKeyRelease(EventKeyboard::KeyCode code, Event* ev)	{}
+
+#endif
+
 	void update(float dt)override;
 
 	RefPtr<Layer>	mGameLayer;

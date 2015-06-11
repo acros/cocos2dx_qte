@@ -11,16 +11,6 @@ QteLayer::~QteLayer()
 
 }
 
-// bool QteLayer::init()
-// {
-// 	if (!Layer::init())
-// 		return false;
-// 
-// 	//Load this layer content
-// 
-// 	return true;
-// }
-
 void QteLayer::onGuiEvent()
 {
 	mHandler->onGuiCallback();

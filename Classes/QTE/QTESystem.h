@@ -45,12 +45,14 @@ protected:
 		QS_FREEZE,			// Waiting for something finishing job done (Mostly in QteLayer)
 	}	mState;
 
-	RefPtr<QteLayer>			mLayer;
+	RefPtr<QteLayer>		mLayer;
 	RefPtr<QteHandler>		mHander;
 
+	QteInfo*				mPreSetInfo;
 	const QteInfo*			mCurrInfo;
 	std::map<const std::string, QteInfo*>	mQteMap;
 
+	
 
 	Node*	mSceneNode;
 	static QteSystem*	sInstance;
