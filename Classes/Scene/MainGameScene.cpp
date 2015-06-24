@@ -2,6 +2,7 @@
 #include "Entity/Soldier.h"
 #include "Entity/Ground.h"
 #include "QTE/QTESystem.h"
+#include "HUD/HudLayer.h"
 
 USING_NS_CC;
 
@@ -40,6 +41,12 @@ bool MainGameScene::init()
 	addChild(mUiLayer);
 	mUiLayer->setCameraMask((int)CameraFlag::USER2);
 
+    auto hud = HudLayer::create();
+    hud->setCameraMask((int)CameraFlag::USER2);
+    addChild(HudLayer::getInstance());
+    hud->setControlTarget(CC_CALLBACK_1(Soldier::movePos, player), CC_CALLBACK_0(Soldier::doAttack, player));
+
+    
 	QteSystem::create(mUiLayer);
 
 	scheduleUpdate();
