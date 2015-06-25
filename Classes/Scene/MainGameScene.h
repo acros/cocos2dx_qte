@@ -17,7 +17,7 @@ public:
 
 
 protected:
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32 || CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
 	void enableDebugInput();
 
 	void onKeyPress(EventKeyboard::KeyCode code, Event* ev);

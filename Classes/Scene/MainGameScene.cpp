@@ -23,7 +23,7 @@ bool MainGameScene::init()
 	addChild(mGameLayer);
 	mGameLayer->setCameraMask((int)CameraFlag::USER1);
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32 || CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
 	enableDebugInput();
 #endif
 
@@ -72,7 +72,7 @@ MainGameScene::~MainGameScene()
 #endif
 }
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32)
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32 || CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
 void MainGameScene::enableDebugInput()
 {
 	auto keyEvt = EventListenerKeyboard::create();

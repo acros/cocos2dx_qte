@@ -1,0 +1,18 @@
+<Solution>
+  <PropertyGroup Name="zFight_Hud" Version="2.3.0.1" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="HUD.csd" Type="Scene" />
+        <Folder Name="HUD">
+          <Image Name="LS01.png" />
+          <Image Name="LS03.png" />
+          <Image Name="LS02.png" />
+          <Image Name="bg.png" />
+          <Image Name="MM04.png" />
+        </Folder>
+        <Project Name="QTE_Click.csd" Type="Layer" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

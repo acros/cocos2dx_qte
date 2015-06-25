@@ -1,0 +1,15 @@
+<Solution>
+  <PropertyGroup Name="QTE_Interface" Version="2.3.0.1" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Project Name="QTE_Normal.csd" Type="Scene" />
+        <Folder Name="Background" />
+        <Folder Name="Button">
+          <Image Name="Cn14.png" />
+          <Image Name="Cn15.png" />
+        </Folder>
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

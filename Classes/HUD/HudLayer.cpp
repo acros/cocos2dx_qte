@@ -1,6 +1,6 @@
 #include "HudLayer.h"
 #include "cocostudio/ActionTimeline/CSLoader.h"
-#include "Soldier.h"
+#include "Entity/Soldier.h"
 
 USING_NS_CC;
 

@@ -1,0 +1,20 @@
+<UserData>
+  <Properties>
+    <Item Key="CocosRecentOperation">
+      <Value ctype="CocosRecentOperation">
+        <LastPublishType Value="Resource" />
+        <IsLastPublish Value="True" />
+        <LastRunType Value="Unknown" />
+      </Value>
+    </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="HUD.csd" />
+          <FilePathData Path="QTE_Click.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="QTE_Click.csd" />
+      </Value>
+    </Item>
+  </Properties>
+</UserData>

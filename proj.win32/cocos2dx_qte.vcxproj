@@ -145,6 +145,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClCompile Include="..\Classes\Entity\Ground.cpp" />
     <ClCompile Include="..\Classes\Entity\Soldier.cpp" />
     <ClCompile Include="..\Classes\GameWorld.cpp" />
+    <ClCompile Include="..\Classes\HUD\HudLayer.cpp" />
     <ClCompile Include="..\Classes\QTE\QteHandler.cpp" />
     <ClCompile Include="..\Classes\QTE\QteHandlerStandard.cpp" />
     <ClCompile Include="..\Classes\QTE\QteInfo.cpp" />
@@ -162,6 +163,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y</Command>
     <ClInclude Include="..\Classes\Entity\Ground.h" />
     <ClInclude Include="..\Classes\Entity\Soldier.h" />
     <ClInclude Include="..\Classes\GameWorld.h" />
+    <ClInclude Include="..\Classes\HUD\HudLayer.h" />
     <ClInclude Include="..\Classes\Predefines.h" />
     <ClInclude Include="..\Classes\QTE\QteHandler.h" />
     <ClInclude Include="..\Classes\QTE\QteHandlerStandard.h" />

@@ -28,6 +28,9 @@
     <Filter Include="src\QTE\QTE_Layer">
       <UniqueIdentifier>{3689f44a-e47c-441c-a9b0-c13fc281c4a7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\HUD">
+      <UniqueIdentifier>{f230042d-4521-4aff-802c-06d5326fc7e2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -71,6 +74,9 @@
     </ClCompile>
     <ClCompile Include="..\Classes\QTE\QteHandlerStandard.cpp">
       <Filter>src\QTE\QTE_Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HUD\HudLayer.cpp">
+      <Filter>src\HUD</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +127,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\QTE\QteHandlerStandard.h">
       <Filter>src\QTE\QTE_Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HUD\HudLayer.h">
+      <Filter>src\HUD</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
