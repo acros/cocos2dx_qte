@@ -7,6 +7,7 @@
 
 USING_NS_CC;
 
+enum class QTE_Result;
 class QteInfo;
 
 class QteSystem{
@@ -23,7 +24,7 @@ public:
 	static QteSystem*	getInstance();
 
 	//Use the predefined data
-	void trigger(const std::string& qteName);
+	void trigger(const std::string& qteName, std::function<void(QTE_Result)> func);
 
 	//Calculating QTE info in runtime
 	void trigger(const class QteInfo*	info);

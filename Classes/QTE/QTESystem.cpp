@@ -43,7 +43,8 @@ QteSystem::~QteSystem()
 	mQteMap.clear();
 }
 
-void QteSystem::trigger(const std::string& qteName)
+//The predeifned event
+void QteSystem::trigger(const std::string& qteName, std::function<void(QTE_Result)> func)
 {
 	assert(mPreSetInfo == nullptr);
 

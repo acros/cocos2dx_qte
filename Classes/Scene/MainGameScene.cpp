@@ -85,7 +85,7 @@ void MainGameScene::onKeyPress(EventKeyboard::KeyCode code, Event* ev)
 {
 	if (code == EventKeyboard::KeyCode::KEY_F1)
 	{
-		QteSystem::getInstance()->trigger("");
+		QteSystem::getInstance()->trigger("",nullptr);
 	}
 }
 

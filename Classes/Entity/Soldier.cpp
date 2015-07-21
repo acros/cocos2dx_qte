@@ -1,6 +1,8 @@
 #include "cocos2d.h"
 #include "Soldier.h"
 #include "EngineEx/Animate3DWithEvent.h"
+#include "QTE/QTESystem.h"
+
 
 USING_NS_CC;
 
@@ -69,17 +71,24 @@ void Soldier::doAttack()
 		m_Appearence->stopActionByTag(ACTION_ANIMATION);
 		m_ComboStage = CS_ATTACK_I;
 		m_Appearence->runAction(createAnimAction(m_AttackAnim, false));
+
+		CCLOG("Attack start");
+		QteSystem::getInstance()->trigger("",nullptr);
+
 	}
 	else
 	{
 		//Trigger attack command in attack action
 		if (m_CriticalTime && mCriticalAttackCheck)
 		{
+			CCLOG("Trigger combo!");
+
 			if (m_ComboStage == CS_ATTACK_I)
 				m_ComboStage = CS_ATTACK_II;
 		}
 		else
 		{
+			CCLOG("Combo failed");
 			mCriticalAttackCheck = false;
 		}
 	}

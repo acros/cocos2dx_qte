@@ -1,6 +1,6 @@
 #include "HudLayer.h"
 #include "cocostudio/ActionTimeline/CSLoader.h"
-#include "Entity/Soldier.h"
+#include "Ui/UIHelper.h"
 
 USING_NS_CC;
 
@@ -21,23 +21,14 @@ bool HudLayer::init()
 	assert(sInstance == nullptr);
 	sInstance = this;
 
-	Size visibleSize = Director::getInstance()->getVisibleSize();
-	Vec2 origin = Director::getInstance()->getVisibleOrigin();
-
-	//Title label
-	auto label = Label::createWithTTF("Acros Game!", "fonts/arial.ttf", 24);
-    
-	// position the label on the center of the screen
-	label->setPosition(Vec2(origin.x + visibleSize.width / 2, origin.y + visibleSize.height - label->getContentSize().height));
-	this->addChild(label, 1);
-
 	//Load HUD
 	m_Hud = CSLoader::createNode("csb/HUD.csb");
 	addChild(m_Hud);
+	ui::Helper::doLayout(m_Hud);
 
-	m_LeftBtn = static_cast<ui::Button*>(m_Hud->getChildByName("bg")->getChildByName("global_anchor_lb")->getChildByName("Btn_Left"));
-	m_RightBtn = static_cast<ui::Button*>(m_Hud->getChildByName("bg")->getChildByName("global_anchor_rb")->getChildByName("Btn_Right"));
-	m_AttackBtn = static_cast<ui::Button*>(m_Hud->getChildByName("bg")->getChildByName("global_anchor_rb")->getChildByName("Btn_Attack"));
+	m_LeftBtn = static_cast<ui::Button*>(m_Hud->getChildByName("global_anchor_lb")->getChildByName("Btn_Left"));
+	m_RightBtn = static_cast<ui::Button*>(m_Hud->getChildByName("global_anchor_rb")->getChildByName("Btn_Right"));
+	m_AttackBtn = static_cast<ui::Button*>(m_Hud->getChildByName("global_anchor_rb")->getChildByName("Btn_Attack"));
 
 	m_LeftBtn->addTouchEventListener(CC_CALLBACK_2(HudLayer::onLeftControlTouch, this));
 	m_RightBtn->addTouchEventListener(CC_CALLBACK_2(HudLayer::onRightControlTouch, this));

@@ -50,17 +50,22 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
     if(!glview) {
-		glview = GLViewImpl::create("cocos2d-x QTE" 
+		glview = GLViewImpl::createWithRect("cocos2d-x QTE"
 #if CC_TARGET_PLATFORM == CC_PLATFORM_WIN32
 			+ std::string(gGameVersion.text)
 #endif
+			, Rect(0,0,1136,640)
+			,1
 			);
 
         director->setOpenGLView(glview);
-    }
+		glview->setDesignResolutionSize(1136, 640, ResolutionPolicy::FIXED_WIDTH);
+	}
+
 
     director->setDisplayStats(true);
     director->setAnimationInterval(1.0 / 60);
+
 
     register_all_packages();
 

@@ -19,10 +19,11 @@ bool QteLayerStandard::init()
 		return false;
 
 	//Load this layer content
-	auto page = CSLoader::createNode("QTE/QTE_Normal.csb");
+	auto page = CSLoader::createNode("csb/QTE_Layout.csb");
 	addChild(page);
+	ui::Helper::doLayout(page);
 
-	mTestBtn = static_cast<ui::Button*>(page->getChildByName("Button_1"));
+	mTestBtn = static_cast<ui::Button*>(page->getChildByName("attack"));
 
 	//TODO: DEBUG CODE
 	mTestBtn->addClickEventListener(CC_CALLBACK_1(QteLayerStandard::onButtonClick, this));

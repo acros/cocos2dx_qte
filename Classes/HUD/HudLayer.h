@@ -7,16 +7,6 @@
 
 USING_NS_CC;
 
-class Soldier;
-// enum class DirectionState{
-// 	Dir_None,
-// 	Dir_Left,
-// 	Dir_Right,
-// 
-// 	//TODO
-// 	Dir_Up,
-// 	Dir_Down
-// };
 
 class HudLayer : public cocos2d::Layer{
 CC_CONSTRUCTOR_ACCESS:
@@ -32,11 +22,11 @@ public:
 
 	CREATE_FUNC(HudLayer);
 
+	//Hack
 	void setControlTarget(std::function<void(float)> moveCallBack,std::function<void()> attackCallBack);
-
 	void update(float dt)override;
-
 	void clearMoveState();
+
 protected:
 
 	std::function<void(float)>	m_MoveFunc;
@@ -51,8 +41,6 @@ protected:
 	RefPtr<ui::Button>		m_LeftBtn;
 	RefPtr<ui::Button>		m_RightBtn;
 	RefPtr<ui::Button>		m_AttackBtn;
-
-	bool isSpriteInteract();
 
 	//DirectionState		m_DirState;
 	bool	m_Left;

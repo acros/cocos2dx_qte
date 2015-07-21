@@ -3,15 +3,16 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
-        <Project Name="HUD.csd" Type="Scene" />
         <Folder Name="HUD">
           <Image Name="LS01.png" />
           <Image Name="LS03.png" />
           <Image Name="LS02.png" />
-          <Image Name="bg.png" />
           <Image Name="MM04.png" />
+          <Image Name="bg.png" />
         </Folder>
-        <Project Name="QTE_Click.csd" Type="Layer" />
+        <Project Name="QTE_Layout.csd" Type="Layer" />
+        <Project Name="MenuScene.csd" Type="Scene" />
+        <Project Name="HUD.csd" Type="Scene" />
       </RootFolder>
     </Group>
   </SolutionFolder>

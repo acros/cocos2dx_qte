@@ -3,6 +3,7 @@
 
 #include "Entity.h"
 
+//Simple combo check
 enum ComboState{
 	CS_IDLE,
 	CS_ATTACK_I,
@@ -52,8 +53,6 @@ private:
 };
 
 #endif
-
-
 
 /*
 	Piglet._action = 

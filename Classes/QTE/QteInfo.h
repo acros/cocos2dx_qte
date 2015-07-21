@@ -3,6 +3,13 @@
 
 #include "base/ccConfig.h"
 
+enum class QTE_Result
+{
+	QTE_FAILED,
+	QTE_SUCCEED,
+
+};
+
 enum class QTE_TYPE
 {
 	QTE_Normal,
