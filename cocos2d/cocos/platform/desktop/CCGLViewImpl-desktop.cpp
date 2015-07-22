@@ -36,7 +36,7 @@ THE SOFTWARE.
 #include "base/CCIMEDispatcher.h"
 #include "base/ccUtils.h"
 #include "base/ccUTF8.h"
-
+#include "2d/CCCamera.h"
 
 NS_CC_BEGIN
 
@@ -298,7 +298,7 @@ GLViewImpl::~GLViewImpl()
 GLViewImpl* GLViewImpl::create(const std::string& viewName)
 {
     auto ret = new (std::nothrow) GLViewImpl;
-	if (ret && ret->initWithRect(viewName, Rect(0, 0, 1136, 640), 1)) {
+    if(ret && ret->initWithRect(viewName, Rect(0, 0, 960, 640), 1)) {
         ret->autorelease();
         return ret;
     }
@@ -551,10 +551,11 @@ void GLViewImpl::setFrameSize(float width, float height)
 
 void GLViewImpl::setViewPortInPoints(float x , float y , float w , float h)
 {
-    glViewport((GLint)(x * _scaleX * _retinaFactor * _frameZoomFactor + _viewPortRect.origin.x * _retinaFactor * _frameZoomFactor),
-               (GLint)(y * _scaleY * _retinaFactor  * _frameZoomFactor + _viewPortRect.origin.y * _retinaFactor * _frameZoomFactor),
-               (GLsizei)(w * _scaleX * _retinaFactor * _frameZoomFactor),
-               (GLsizei)(h * _scaleY * _retinaFactor * _frameZoomFactor));
+    experimental::Viewport vp = {(float)(x * _scaleX * _retinaFactor * _frameZoomFactor + _viewPortRect.origin.x * _retinaFactor * _frameZoomFactor),
+        (float)(y * _scaleY * _retinaFactor  * _frameZoomFactor + _viewPortRect.origin.y * _retinaFactor * _frameZoomFactor),
+        (float)(w * _scaleX * _retinaFactor * _frameZoomFactor),
+        (float)(h * _scaleY * _retinaFactor * _frameZoomFactor)};
+    Camera::setDefaultViewport(vp);
 }
 
 void GLViewImpl::setScissorInPoints(float x , float y , float w , float h)

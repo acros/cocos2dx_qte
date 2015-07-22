@@ -27,11 +27,10 @@
     <Item Key="TabsParamsKey">
       <Value ctype="TabsInfo">
         <OpenedDocuments>
-          <FilePathData Path="MenuScene.csd" />
           <FilePathData Path="QTE_Layout.csd" />
           <FilePathData Path="HUD.csd" />
         </OpenedDocuments>
-        <ActiveDocument Path="MenuScene.csd" />
+        <ActiveDocument Path="HUD.csd" />
       </Value>
     </Item>
   </Properties>

@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\EngineEx">
+      <UniqueIdentifier>{326e0cfe-4acd-4c14-bdc5-f044bf132813}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Entity">
+      <UniqueIdentifier>{feb46e1e-5c12-4724-8284-2c0adc55a254}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\HUD">
+      <UniqueIdentifier>{15be1ceb-746e-4522-93ab-bea5ece01ec2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Scene">
+      <UniqueIdentifier>{97ad735f-e1ab-417a-82b9-7fab9034f204}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\QTE">
+      <UniqueIdentifier>{94264af6-64da-4b40-9e86-704858618364}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\GameWorld.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\EngineEx\Animate3DWithEvent.cpp">
+      <Filter>src\EngineEx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entity\Ground.cpp">
+      <Filter>src\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entity\Soldier.cpp">
+      <Filter>src\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entity\Entity.cpp">
+      <Filter>src\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\HUD\HudLayer.cpp">
+      <Filter>src\HUD</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Scene\MainGameScene.cpp">
+      <Filter>src\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QTE\QteHandlerStandard.cpp">
+      <Filter>src\QTE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QTE\QteInfo.cpp">
+      <Filter>src\QTE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QTE\QteLayer.cpp">
+      <Filter>src\QTE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QTE\QteLayerStandard.cpp">
+      <Filter>src\QTE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QTE\QTESystem.cpp">
+      <Filter>src\QTE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QTE\QteHandler.cpp">
+      <Filter>src\QTE</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\GameWorld.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Predefines.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\EngineEx\Animate3DWithEvent.h">
+      <Filter>src\EngineEx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entity\Entity.h">
+      <Filter>src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entity\EntityUtils.h">
+      <Filter>src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entity\Ground.h">
+      <Filter>src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entity\Soldier.h">
+      <Filter>src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entity\Enemy.h">
+      <Filter>src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\HUD\HudLayer.h">
+      <Filter>src\HUD</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Scene\MainGameScene.h">
+      <Filter>src\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QTE\QteHandlerStandard.h">
+      <Filter>src\QTE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QTE\QteInfo.h">
+      <Filter>src\QTE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QTE\QteLayer.h">
+      <Filter>src\QTE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QTE\QteLayerStandard.h">
+      <Filter>src\QTE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QTE\QTESystem.h">
+      <Filter>src\QTE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QTE\QteHandler.h">
+      <Filter>src\QTE</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

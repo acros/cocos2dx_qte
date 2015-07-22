@@ -33,7 +33,7 @@
 #include <string>
 #include <ft2build.h>
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
 #define generic GenericFromFreeTypeLibrary
 #define internal InternalFromFreeTypeLibrary
 #endif
@@ -41,7 +41,7 @@
 #include FT_FREETYPE_H
 #include FT_STROKER_H
 
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
 #undef generic
 #undef internal
 #endif
@@ -66,7 +66,7 @@ public:
     
     unsigned char       * getGlyphBitmap(unsigned short theChar, long &outWidth, long &outHeight, Rect &outRect,int &xAdvance);
     
-    virtual int           getFontMaxHeight() const override;  
+    virtual int           getFontMaxHeight() const override { return _lineHeight; }
     virtual int           getFontAscender() const;
 
 protected:
@@ -90,6 +90,8 @@ private:
     std::string       _fontName;
     bool              _distanceFieldEnabled;
     float             _outlineSize;
+    int _lineHeight;
+    FontAtlas* _fontAtlas;
 };
 
 /// @endcond

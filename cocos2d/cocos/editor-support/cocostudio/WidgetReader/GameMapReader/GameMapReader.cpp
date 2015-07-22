@@ -242,9 +242,6 @@ namespace cocostudio
         {
             Node* node = Node::create();
             setPropsWithFlatBuffers(node, (Table*)gameMapOptions);
-            auto label = Label::create();
-            label->setString(__String::createWithFormat("%s missed", errorFilePath.c_str())->getCString());
-            node->addChild(label);
             return node;
         }
         
