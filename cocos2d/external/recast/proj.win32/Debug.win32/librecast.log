@@ -1,5 +1,5 @@
-﻿Build started 2015/7/23 0:39:47.
-     1>Project "D:\CodingNow\git_repo\qte\cocos2d\external\recast\proj.win32\librecast.vcxproj" on node 4 (Build target(s)).
+﻿Build started 2015/7/23 1:09:55.
+     1>Project "D:\CodingNow\git_repo\qte\cocos2d\external\recast\proj.win32\librecast.vcxproj" on node 5 (Rebuild target(s)).
      1>ClCompile:
          D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I../../ /I"d:\Program Files (x86)\Visual Leak Detector\include" /Zi /nologo /W3 /WX- /MP /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _USING_V110_SDK71_ /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\DebugUtils\DebugDraw.cpp ..\DebugUtils\DetourDebugDraw.cpp ..\DetourCrowd\DetourCrowd.cpp ..\DetourCrowd\DetourLocalBoundary.cpp ..\DetourCrowd\DetourObstacleAvoidance.cpp ..\DetourCrowd\DetourPathCorridor.cpp ..\DetourCrowd\DetourPathQueue.cpp ..\DetourCrowd\DetourProximityGrid.cpp ..\DetourTileCache\DetourTileCache.cpp ..\DetourTileCache\DetourTileCacheBuilder.cpp ..\Detour\DetourAlloc.cpp ..\Detour\DetourCommon.cpp ..\Detour\DetourNavMesh.cpp ..\Detour\DetourNavMeshBuilder.cpp ..\Detour\DetourNavMeshQuery.cpp ..\Detour\DetourNode.cpp
          DebugDraw.cpp
@@ -9,8 +9,8 @@
          DetourObstacleAvoidance.cpp
          DetourPathCorridor.cpp
          DetourPathQueue.cpp
-         DetourProximityGrid.cpp
      1>..\DetourCrowd\DetourObstacleAvoidance.cpp(334): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+         DetourProximityGrid.cpp
          DetourTileCache.cpp
          DetourTileCacheBuilder.cpp
          DetourAlloc.cpp
@@ -40,8 +40,8 @@
          Debug.win32\DetourNode.obj
          Debug.win32\fastlz.obj
          librecast.vcxproj -> D:\CodingNow\git_repo\qte\proj.win32\Debug.win32\librecast.lib
-     1>Done Building Project "D:\CodingNow\git_repo\qte\cocos2d\external\recast\proj.win32\librecast.vcxproj" (Build target(s)).
+     1>Done Building Project "D:\CodingNow\git_repo\qte\cocos2d\external\recast\proj.win32\librecast.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:06.04
+Time Elapsed 00:00:03.01

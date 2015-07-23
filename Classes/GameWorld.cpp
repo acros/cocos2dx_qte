@@ -12,16 +12,17 @@ GameWorld::~GameWorld()
 
 void GameWorld::createGame()
 {
-	mCurrScene = MainGameScene::create();
 }
 
 void GameWorld::runGame()
 {
-	Director::getInstance()->runWithScene(mCurrScene);
+	//MainGameScene::create()
+	auto x = new MainGameScene();
+	x->init();
+	Director::getInstance()->runWithScene(x);
 }
 
 void GameWorld::quitGame()
 {
-	mCurrScene = nullptr;
 }
 

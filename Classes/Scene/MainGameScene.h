@@ -5,7 +5,7 @@
 
 USING_NS_CC;
 
-class MainGameScene : public cocos2d::Scene
+class MainGameScene : public Scene
 {
 CC_CONSTRUCTOR_ACCESS:
 	virtual bool init()override;
@@ -27,8 +27,8 @@ protected:
 
 	void update(float dt)override;
 
-	RefPtr<Layer>	mGameLayer;
-	RefPtr<Layer>	mUiLayer;
+// 	RefPtr<Layer>	mGameLayer;
+// 	RefPtr<Layer>	mUiLayer;
 
 };
 

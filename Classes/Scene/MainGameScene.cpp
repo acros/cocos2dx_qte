@@ -19,7 +19,7 @@ bool MainGameScene::init()
     addChild(cam);
     
 	//Init layer for 3d object
-	mGameLayer = Layer::create();
+	auto mGameLayer = Layer::create();
 	addChild(mGameLayer);
 	mGameLayer->setCameraMask((int)CameraFlag::USER1);
 
@@ -38,7 +38,7 @@ bool MainGameScene::init()
 	uiCam->setCameraFlag(CameraFlag::USER2);
 	addChild(uiCam);
 
-	mUiLayer = Layer::create();
+	auto mUiLayer = Layer::create();
 	addChild(mUiLayer);
 	mUiLayer->setCameraMask((int)CameraFlag::USER2);
 
@@ -78,7 +78,7 @@ void MainGameScene::enableDebugInput()
 	auto keyEvt = EventListenerKeyboard::create();
 	keyEvt->onKeyPressed = CC_CALLBACK_2(MainGameScene::onKeyPress, this);
 	keyEvt->onKeyReleased = CC_CALLBACK_2(MainGameScene::onKeyRelease, this);
-	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(keyEvt, mGameLayer);
+//	Director::getInstance()->getEventDispatcher()->addEventListenerWithSceneGraphPriority(keyEvt, mGameLayer);
 }
 
 void MainGameScene::onKeyPress(EventKeyboard::KeyCode code, Event* ev)
