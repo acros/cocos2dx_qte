@@ -16,7 +16,7 @@ public:
 
 protected:
 
-//	RefPtr<Scene>		mCurrScene;
+	RefPtr<Scene>		mCurrScene;
 };
 
 #endif

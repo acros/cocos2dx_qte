@@ -15,6 +15,8 @@ CC_CONSTRUCTOR_ACCESS:
 public:
 	CREATE_FUNC(MainGameScene);
 
+private:
+	CC_DISALLOW_COPY_AND_ASSIGN(MainGameScene);
 
 protected:
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32 || CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
@@ -27,8 +29,8 @@ protected:
 
 	void update(float dt)override;
 
-// 	RefPtr<Layer>	mGameLayer;
-// 	RefPtr<Layer>	mUiLayer;
+	RefPtr<Layer>	mGameLayer;
+	RefPtr<Layer>	mUiLayer;
 
 };
 
