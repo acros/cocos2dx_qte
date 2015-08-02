@@ -18,16 +18,19 @@ bool Ground::init()
 {
 	Entity::init();
 
-	m_Appearence = cocos2d::Sprite3D::create("model/scene/changing.c3b");
+	Physics3DRigidBodyDes rbDes;
+	rbDes.mass = 0.0f;
+	rbDes.shape = Physics3DShape::createBox(Vec3(1000.f,0.5f,1000.f));
 
-	if (m_Appearence != nullptr){
+	auto sprite = PhysicsSprite3D::create("model/scene/changing.c3b", &rbDes);
+	sprite->setPosition3D(Vec3(350, 0, 430));
+	sprite->setCameraMask((int)CameraFlag::USER1);
+	sprite->syncNodeToPhysics();
+	sprite->setSyncFlag(Physics3DComponent::PhysicsSyncFlag::NONE);
 
-		m_Appearence->setPosition3D(Vec3(350, 0, 430));
-		m_Appearence->setCameraMask((int)CameraFlag::USER1);
-		addChild(m_Appearence);
-		//m_Appearence->setScale(f);
-		return true;
-	}
+	m_Appearence = sprite;
+	addChild(m_Appearence);
 
-	return false;
+
+	return true;
 }

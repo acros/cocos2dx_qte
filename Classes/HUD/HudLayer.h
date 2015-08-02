@@ -24,6 +24,8 @@ public:
 
 	//Hack
 	void setControlTarget(std::function<void(float)> moveCallBack,std::function<void()> attackCallBack);
+	void setEnemyAttack(std::function<void()> enemyAttackCallBack);
+
 	void update(float dt)override;
 	void clearMoveState();
 
@@ -31,16 +33,20 @@ protected:
 
 	std::function<void(float)>	m_MoveFunc;
 	std::function<void()>		m_AttackFunc;
+	std::function<void()>		m_EnemyAttack;
 
 	void onLeftControlTouch(Ref *sender, ui::Widget::TouchEventType controlEvent);
 	void onRightControlTouch(Ref *sender, ui::Widget::TouchEventType controlEvent);
 	void onAttackBtnClick(Ref* sender);
+	void onEnemyAttack(Ref* sender);
 
 	RefPtr<Node>		m_Hud;
 
 	RefPtr<ui::Button>		m_LeftBtn;
 	RefPtr<ui::Button>		m_RightBtn;
 	RefPtr<ui::Button>		m_AttackBtn;
+	RefPtr<ui::Button>		m_StartBtn;
+
 
 	//DirectionState		m_DirState;
 	bool	m_Left;

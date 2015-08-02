@@ -8,32 +8,39 @@ USING_NS_CC;
 
 Soldier::Soldier() :m_Speed(200.f), m_ComboStage(CS_IDLE), m_CriticalTime(false), mCriticalAttackCheck(false)
 {
-
+	assert(sPlayer == nullptr);
+	sPlayer = this;
 }
 
 Soldier::~Soldier()
 {
-
+	sPlayer = nullptr;
 }
 
 bool Soldier::init()
 {
 	Entity::init();
 
-	m_Appearence = Sprite3D::create("model/knight/knight.c3b");
-	
-	if (m_Appearence != nullptr){
-		m_Appearence->setScale(9);
+	//Prepare for Physics
+	Physics3DRigidBodyDes rbDes;
+	rbDes.mass = 500.0f;
+	rbDes.shape = Physics3DShape::createCapsule(10.f, 25.f);
+	auto rigidBody = Physics3DRigidBody::create(&rbDes);
+	auto component = Physics3DComponent::create(rigidBody, Vec3(0.f, -20.f, 0.f));
 
-		m_Appearence->setPosition3D(Vec3(0, 0, 0));
-		m_Appearence->setRotation3D(Vec3(0, 90, 0));
-		m_Appearence->setCameraMask((int)CameraFlag::USER1);
+	auto sprite = Sprite3D::create("model/knight/knight.c3b");
 
-		addChild(m_Appearence);
-	}
-	else
-		return false;
-	
+	sprite->setScale(9);
+	sprite->setRotation3D(Vec3(0, 90, 0));
+	sprite->setCameraMask((int)CameraFlag::USER1);
+
+	sprite->addComponent(component);
+	component->syncNodeToPhysics();
+	component->setSyncFlag(Physics3DComponent::PhysicsSyncFlag::NODE_TO_PHYSICS);
+
+	m_Appearence = sprite;
+	addChild(m_Appearence);
+
 	auto animData = Animation3D::create("model/knight/knight.c3b");
 	m_WalkAnim = Animate3D::createWithFrames(animData, 227, 246);
 	

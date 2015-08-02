@@ -2,6 +2,9 @@
 
 USING_NS_CC;
 
+Entity* Entity::sPlayer = nullptr;
+
+
 Entity::Entity() :m_Appearence(nullptr)
 {
 }

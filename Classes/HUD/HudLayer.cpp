@@ -6,14 +6,17 @@ USING_NS_CC;
 
 HudLayer* HudLayer::sInstance = nullptr;
 
-HudLayer::HudLayer() :m_MoveFunc(nullptr), m_Left(false), m_Right(false)
+HudLayer::HudLayer() 
+	:m_MoveFunc(nullptr)
+	, m_EnemyAttack(nullptr)
+	, m_AttackFunc(nullptr)
+	, m_Left(false)
+	, m_Right(false)
 {
-
 }
 
 HudLayer::~HudLayer()
 {
-
 }
 
 bool HudLayer::init()
@@ -33,6 +36,9 @@ bool HudLayer::init()
 // 	m_LeftBtn->addTouchEventListener(CC_CALLBACK_2(HudLayer::onLeftControlTouch, this));
 // 	m_RightBtn->addTouchEventListener(CC_CALLBACK_2(HudLayer::onRightControlTouch, this));
 	m_AttackBtn->addClickEventListener(CC_CALLBACK_1(HudLayer::onAttackBtnClick, this));
+
+	m_StartBtn = static_cast<ui::Button*>(m_Hud->getChildByName("global_anchor_rb")->getChildByName("startBtn"));
+	m_StartBtn->addClickEventListener(CC_CALLBACK_1(HudLayer::onEnemyAttack, this));
 
 	scheduleUpdate();
 
@@ -100,6 +106,18 @@ void HudLayer::clearMoveState()
 
 void HudLayer::onAttackBtnClick(Ref* sender)
 {
-	m_AttackFunc();
+	if (m_AttackFunc != nullptr)
+		m_AttackFunc();
+}
+
+void HudLayer::onEnemyAttack(Ref* sender)
+{
+	if (m_EnemyAttack != nullptr)
+		m_EnemyAttack();
+}
+
+void HudLayer::setEnemyAttack(std::function<void()> enemyAttackCallBack)
+{
+	m_EnemyAttack = enemyAttackCallBack;
 }
 

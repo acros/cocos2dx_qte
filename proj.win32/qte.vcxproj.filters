@@ -72,6 +72,12 @@
     <ClCompile Include="..\Classes\QTE\QteHandler.cpp">
       <Filter>src\QTE</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Predefines.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Entity\Slime.cpp">
+      <Filter>src\Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -101,9 +107,6 @@
     <ClInclude Include="..\Classes\Entity\Soldier.h">
       <Filter>src\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Entity\Enemy.h">
-      <Filter>src\Entity</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\HUD\HudLayer.h">
       <Filter>src\HUD</Filter>
     </ClInclude>
@@ -127,6 +130,9 @@
     </ClInclude>
     <ClInclude Include="..\Classes\QTE\QteHandler.h">
       <Filter>src\QTE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Entity\Slime.h">
+      <Filter>src\Entity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

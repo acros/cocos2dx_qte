@@ -149,11 +149,13 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
   <ItemGroup>
     <ClCompile Include="..\Classes\AppDelegate.cpp" />
     <ClCompile Include="..\Classes\EngineEx\Animate3DWithEvent.cpp" />
+    <ClCompile Include="..\Classes\Entity\Slime.cpp" />
     <ClCompile Include="..\Classes\Entity\Entity.cpp" />
     <ClCompile Include="..\Classes\Entity\Ground.cpp" />
     <ClCompile Include="..\Classes\Entity\Soldier.cpp" />
     <ClCompile Include="..\Classes\GameWorld.cpp" />
     <ClCompile Include="..\Classes\HUD\HudLayer.cpp" />
+    <ClCompile Include="..\Classes\Predefines.cpp" />
     <ClCompile Include="..\Classes\QTE\QteHandler.cpp" />
     <ClCompile Include="..\Classes\QTE\QteHandlerStandard.cpp" />
     <ClCompile Include="..\Classes\QTE\QteInfo.cpp" />
@@ -166,7 +168,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
   <ItemGroup>
     <ClInclude Include="..\Classes\AppDelegate.h" />
     <ClInclude Include="..\Classes\EngineEx\Animate3DWithEvent.h" />
-    <ClInclude Include="..\Classes\Entity\Enemy.h" />
+    <ClInclude Include="..\Classes\Entity\Slime.h" />
     <ClInclude Include="..\Classes\Entity\Entity.h" />
     <ClInclude Include="..\Classes\Entity\EntityUtils.h" />
     <ClInclude Include="..\Classes\Entity\Ground.h" />

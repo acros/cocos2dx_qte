@@ -9,6 +9,9 @@
           <Image Name="LS02.png" />
           <Image Name="MM04.png" />
           <Image Name="bg.png" />
+          <Image Name="start_btn_normal.png" />
+          <Image Name="start_btn_clicked.png" />
+          <Image Name="start_btn_disable.png" />
         </Folder>
         <Project Name="QTE_Layout.csd" Type="Layer" />
         <Project Name="MenuScene.csd" Type="Scene" />

@@ -1,8 +1,11 @@
 #ifndef __ENTITY_H__
 #define __ENTITY_H__
 
+#include "physics3d/CCPhysics3D.h"
 #include "EntityUtils.h"
 #include "cocos2d.h"
+
+USING_NS_CC;
 
 class Entity : public cocos2d::Node{
 CC_CONSTRUCTOR_ACCESS:
@@ -13,16 +16,19 @@ CC_CONSTRUCTOR_ACCESS:
 public:
 //	CREATE_FUNC(Entity);
 
+	Node*	getNode()const { return m_Appearence; }
 
 protected:
 	virtual void attackFinishedCallback(bool state);
-	cocos2d::Action*	createAnimAction(cocos2d::Animate3D*,bool loop = true);
-	
-	
-	cocos2d::RefPtr<cocos2d::Action>	m_IdleAnimAction;
+	Action*	createAnimAction(Animate3D*, bool loop = true);
+
+
+	RefPtr<cocos2d::Action>	m_IdleAnimAction;
 
 	//Sprite3D or Sprite
-	cocos2d::Node*	m_Appearence;
+	Node*	m_Appearence;
+
+	static Entity*	sPlayer;
 };
 
 #endif
