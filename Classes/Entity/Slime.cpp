@@ -22,6 +22,10 @@ bool Slime::init()
 	Quaternion quat;
 	Quaternion::createFromAxisAngle(Vec3(0.f, 1.f, 0.f), CC_DEGREES_TO_RADIANS(180), &quat);
 	auto component = Physics3DComponent::create(rigidBody, Vec3(0.f, -10.f, 0.f)/*,quat*/);
+	rigidBody->setMask(CollisionMask::CM_Slime);
+
+	component->setBtMask(CM_Slime);
+	component->setBtGroup(ColGroup_Slime);
 
 	auto sprite = Sprite3D::create("model/slime/slime.c3b", "model/slime/baozi.jpg");
 	sprite->addComponent(component);

@@ -35,10 +35,25 @@
           <AbstractNodeData Name="global_anchor_rb" ActionTag="-1476882163" Tag="39" IconVisible="True" PositionPercentXEnabled="True" LeftMargin="1136.0000" TopMargin="640.0000" ctype="SingleNodeObjectData">
             <Size />
             <Children>
-              <AbstractNodeData Name="startBtn" ActionTag="-1821945470" Tag="10" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="BottomEdge" LeftMargin="-421.6577" RightMargin="181.6577" TopMargin="-126.9191" BottomMargin="45.9191" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="210" Scale9Height="59" OutlineSize="0" ShadowOffsetX="0" ShadowOffsetY="0" ctype="ButtonObjectData">
+              <AbstractNodeData Name="resetBtn" ActionTag="-1221430212" Tag="11" IconVisible="False" LeftMargin="-108.0000" RightMargin="72.0000" TopMargin="-98.5000" BottomMargin="61.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="11" RightEage="11" TopEage="11" BottomEage="11" Scale9OriginX="11" Scale9OriginY="11" Scale9Width="14" Scale9Height="15" ctype="ButtonObjectData">
+                <Size X="36.0000" Y="37.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="-90.0000" Y="80.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition />
+                <PreSize />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Normal" Path="HUD/Star026_2.png" Plist="" />
+                <PressedFileData Type="Normal" Path="HUD/Star026_2.png" Plist="" />
+                <NormalFileData Type="Normal" Path="HUD/Star026.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="startBtn" ActionTag="-1821945470" Tag="10" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="BottomEdge" LeftMargin="-421.6577" RightMargin="181.6577" TopMargin="-120.5000" BottomMargin="39.5000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="210" Scale9Height="59" OutlineSize="0" ShadowOffsetX="0" ShadowOffsetY="0" ctype="ButtonObjectData">
                 <Size X="240.0000" Y="81.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="-301.6577" Y="86.4191" />
+                <Position X="-301.6577" Y="80.0000" />
                 <Scale ScaleX="0.8000" ScaleY="0.8000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />
@@ -50,10 +65,10 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Btn_Attack" ActionTag="-986246935" Tag="40" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="BottomEdge" LeftMargin="-189.2234" RightMargin="109.2234" TopMargin="-260.7706" BottomMargin="180.7706" TouchEnable="True" FontSize="14" Scale9Enable="True" Scale9Width="61" Scale9Height="59" OutlineSize="0" ShadowOffsetX="0" ShadowOffsetY="0" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Btn_Attack" ActionTag="-986246935" Tag="40" IconVisible="False" HorizontalEdge="RightEdge" VerticalEdge="BottomEdge" LeftMargin="-130.0000" RightMargin="50.0000" TopMargin="-259.3818" BottomMargin="179.3818" TouchEnable="True" FontSize="14" Scale9Enable="True" Scale9Width="61" Scale9Height="59" OutlineSize="0" ShadowOffsetX="0" ShadowOffsetY="0" ctype="ButtonObjectData">
                 <Size X="80.0000" Y="80.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="-149.2234" Y="220.7706" />
+                <Position X="-90.0000" Y="219.3818" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition />

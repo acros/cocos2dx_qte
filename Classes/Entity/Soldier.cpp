@@ -27,6 +27,8 @@ bool Soldier::init()
 	rbDes.shape = Physics3DShape::createCapsule(10.f, 25.f);
 	auto rigidBody = Physics3DRigidBody::create(&rbDes);
 	auto component = Physics3DComponent::create(rigidBody, Vec3(0.f, -20.f, 0.f));
+	component->setBtMask(CM_Soldier);
+	component->setBtGroup(ColGroup_Soilder);
 
 	auto sprite = Sprite3D::create("model/knight/knight.c3b");
 
@@ -38,8 +40,28 @@ bool Soldier::init()
 	component->syncNodeToPhysics();
 	component->setSyncFlag(Physics3DComponent::PhysicsSyncFlag::NODE_TO_PHYSICS);
 
+	//The large one for QTE
+	Physics3DGhostObjDes qteDes;
+	qteDes.shape = Physics3DShape::createSphere(40.f);
+	auto ghostBody = Physics3DGhostObj::create(&qteDes);
+
+	auto component2 = Physics3DComponent::create(ghostBody, Vec3(0.f,-10.f, 0.f));
+	component2->setName("Qte_Phy");	
+	component2->setBtMask(CM_SoldierQTE);
+	component2->setBtGroup(ColGroup_SoldierQTE);
+	sprite->addComponent(component2);
+	component2->syncNodeToPhysics();
+	component2->setSyncFlag(Physics3DComponent::PhysicsSyncFlag::NODE_TO_PHYSICS);
+
+	rigidBody->setCollisionCallback(CC_CALLBACK_1(Soldier::hitCallback,this));
+	ghostBody->setCollisionCallback(CC_CALLBACK_1(Soldier::qteTriggerCallback, this));
+
+	rigidBody->setMask(CM_Soldier);
+	ghostBody->setMask(CM_Soldier);
+
 	m_Appearence = sprite;
 	addChild(m_Appearence);
+
 
 	auto animData = Animation3D::create("model/knight/knight.c3b");
 	m_WalkAnim = Animate3D::createWithFrames(animData, 227, 246);
@@ -51,8 +73,6 @@ bool Soldier::init()
 	m_AttackAnim = temp;
 
 	temp = Animate3dWithEvent::createWithFrames(animData, 110, 140);
-//	temp->registerEventOnFrame(125, CC_CALLBACK_0(Soldier::attackFrameCall, this, true));
-//	temp->registerEventOnFrame(135, CC_CALLBACK_0(Soldier::attackFrameCall, this, false));
 	m_Attack2Anim = temp;
 
 	m_IdleAnim = Animate3D::createWithFrames(animData, 267, 283);
@@ -123,6 +143,23 @@ void Soldier::attackFrameCall(bool state)
 			m_Appearence->stopActionByTag(ACTION_ANIMATION);
 			m_Appearence->runAction(createAnimAction(m_Attack2Anim, false));
 		}
+	}
+}
+
+void Soldier::hitCallback(const Physics3DCollisionInfo &ci)
+{
+	if (ci.objB->getMask() == CM_Slime)
+	{
+		CCLOG("Ouch, i'm hurt!!!!");
+	}
+
+}
+
+void Soldier::qteTriggerCallback(const Physics3DCollisionInfo &ci)
+{
+	if (ci.objB->getMask() == CM_Slime)
+	{
+		CCLOG("Ouch,QTE!!!!");
 	}
 }
 

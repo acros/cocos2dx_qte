@@ -29,6 +29,8 @@ public:
 	void update(float dt)override;
 	void clearMoveState();
 
+	void resetGame();
+
 protected:
 
 	std::function<void(float)>	m_MoveFunc;

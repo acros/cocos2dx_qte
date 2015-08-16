@@ -24,6 +24,11 @@ public:
 	void movePos(float dm);
 	void doAttack();
 
+protected:
+	
+	virtual void hitCallback(const Physics3DCollisionInfo &ci);
+	virtual	void qteTriggerCallback(const Physics3DCollisionInfo &ci);
+
 private:
 	virtual void attackFinishedCallback(bool state);
 

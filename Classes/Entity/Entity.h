@@ -9,6 +9,20 @@ USING_NS_CC;
 
 class Entity : public cocos2d::Node{
 CC_CONSTRUCTOR_ACCESS:
+	enum CollisionMask
+	{
+		CM_Unknown = 0,
+		CM_Ground = 1 << 1,
+		CM_Soldier = 1 << 2,
+		CM_Slime = 1 << 3,
+		CM_SoldierQTE = 1 << 4
+	};
+
+	static short ColGroup_Ground;
+	static short ColGroup_Soilder;
+	static short ColGroup_Slime;
+	static short ColGroup_SoldierQTE;
+
 	Entity();
 	virtual ~Entity();
 

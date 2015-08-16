@@ -37,6 +37,7 @@
 #include "CCPhysics3DObject.h"
 #include "CCPhysics3DComponent.h"
 #include "CCPhysics3DConstraint.h"
+#include "bullet/BulletCollision/CollisionDispatch/btGhostObject.h"
 
 NS_CC_BEGIN
 

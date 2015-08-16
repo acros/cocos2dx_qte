@@ -40,6 +40,10 @@ bool HudLayer::init()
 	m_StartBtn = static_cast<ui::Button*>(m_Hud->getChildByName("global_anchor_rb")->getChildByName("startBtn"));
 	m_StartBtn->addClickEventListener(CC_CALLBACK_1(HudLayer::onEnemyAttack, this));
 
+	m_StartBtn = static_cast<ui::Button*>(m_Hud->getChildByName("global_anchor_rb")->getChildByName("resetBtn"));
+	m_StartBtn->addClickEventListener(CC_CALLBACK_0(HudLayer::resetGame, this));
+
+
 	scheduleUpdate();
 
 	return true;
@@ -119,5 +123,10 @@ void HudLayer::onEnemyAttack(Ref* sender)
 void HudLayer::setEnemyAttack(std::function<void()> enemyAttackCallBack)
 {
 	m_EnemyAttack = enemyAttackCallBack;
+}
+
+void HudLayer::resetGame()
+{
+
 }
 

@@ -37,6 +37,8 @@
 
 class btCollisionShape;
 class btRigidBody;
+class btGhostObject;
+class btPairCachingGhostObject;
 class btPersistentManifold;
 
 NS_CC_BEGIN
@@ -79,6 +81,7 @@ public:
     {
         UNKNOWN = 0,
         RIGID_BODY,
+		GHOST_OBJ,
     };
     
     /** Get the Physics3DObject Type. */
@@ -360,6 +363,46 @@ protected:
 
 // end of 3d group
 /// @}
+
+struct CC_DLL Physics3DGhostObjDes
+{
+// 	float mass; //Note: mass equals zero means static, default 0
+// 	cocos2d::Vec3 localInertia; //default (0, 0, 0)
+	Physics3DShape* shape;
+	cocos2d::Mat4 originalTransform;
+	bool          disableSleep; //it is always active if disabled
+
+	Physics3DGhostObjDes()
+// 		: mass(0.f)
+// 		, localInertia(0.f, 0.f, 0.f)
+		: shape(nullptr)
+		, disableSleep(false)
+	{}
+};
+
+//For sth can be overlapped
+class CC_DLL Physics3DGhostObj: public Physics3DObject
+{
+	friend class Physics3DWorld;
+
+public:
+	static Physics3DGhostObj* create(Physics3DGhostObjDes* info);
+
+	/** Get the pointer of btRigidBody. */
+	btGhostObject* getGhostObj()const { return _btGhostObj; }
+
+	virtual cocos2d::Mat4 getWorldTransform() const override;
+
+CC_CONSTRUCTOR_ACCESS:
+	Physics3DGhostObj();
+	virtual ~Physics3DGhostObj();
+
+	bool init(Physics3DGhostObjDes* info);
+
+protected:
+	Physics3DShape *_ghost3DShape;
+	btGhostObject* _btGhostObj;
+};
 
 NS_CC_END
 

@@ -4,6 +4,11 @@ USING_NS_CC;
 
 Entity* Entity::sPlayer = nullptr;
 
+short Entity::ColGroup_Ground = CM_Soldier | CM_Slime | CM_SoldierQTE;
+short Entity::ColGroup_Soilder = CM_Ground | CM_Slime;
+short Entity::ColGroup_Slime = CM_Soldier | CM_Ground | CM_SoldierQTE;
+short Entity::ColGroup_SoldierQTE = CM_Ground | CM_Slime;
+
 
 Entity::Entity() :m_Appearence(nullptr)
 {
@@ -40,4 +45,3 @@ void Entity::attackFinishedCallback(bool state)
 		m_Appearence->runAction(m_IdleAnimAction);
 	}
 }
-

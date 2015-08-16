@@ -119,14 +119,22 @@ public:
      */
     void syncPhysicsToNode();
     
+	void setBtGroup(short g)	{ _BtGroup = g; }
+	void setBtMask(short m)	{ _BtMask = m; }
+
+	short getBtGroup()const { return _BtGroup; }
+	short getBtMask()const { return _BtMask; }
+
 CC_CONSTRUCTOR_ACCESS:
     Physics3DComponent();
     
 protected:
     void preSimulate();
-    
     void postSimulate();
     
+	short _BtGroup;
+	short _BtMask;
+
     cocos2d::Mat4             _transformInPhysics; //transform in physics space
     cocos2d::Mat4             _invTransformInPhysics;
     

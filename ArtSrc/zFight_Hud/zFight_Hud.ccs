@@ -12,6 +12,8 @@
           <Image Name="start_btn_normal.png" />
           <Image Name="start_btn_clicked.png" />
           <Image Name="start_btn_disable.png" />
+          <Image Name="Star026.png" />
+          <Image Name="Star026_2.png" />
         </Folder>
         <Project Name="QTE_Layout.csd" Type="Layer" />
         <Project Name="MenuScene.csd" Type="Scene" />

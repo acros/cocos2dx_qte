@@ -98,7 +98,8 @@ public:
     
     /** Add a Physics3DObject. */
     void addPhysics3DObject(Physics3DObject* physicsObj);
-    
+	void addPhysics3DObject(Physics3DObject* physicsObj, short g, short m);
+
     /** Remove a Physics3DObject. */
     void removePhysics3DObject(Physics3DObject* physicsObj);
     

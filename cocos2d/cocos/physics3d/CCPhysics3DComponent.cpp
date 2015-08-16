@@ -73,6 +73,8 @@ void Physics3DComponent::setPhysics3DObject(Physics3DObject* physicsObj)
 Physics3DComponent::Physics3DComponent()
 : _physics3DObj(nullptr)
 , _syncFlag(Physics3DComponent::PhysicsSyncFlag::NODE_AND_NODE)
+, _BtGroup(-1)
+, _BtMask(-1)
 {
     
 }
@@ -93,7 +95,16 @@ void Physics3DComponent::addToPhysicsWorld(Physics3DWorld* world)
     if (_physics3DObj)
     {
         _physics3DObj->setPhysicsWorld(world);
-        world->addPhysics3DObject(_physics3DObj);
+        
+		if (_BtGroup != -1 && _BtMask != -1)
+		{
+			world->addPhysics3DObject(_physics3DObj, _BtGroup, _BtMask);
+		}
+		else
+		{
+			world->addPhysics3DObject(_physics3DObj);
+		}
+
         auto& components = world->_physicsComponents;
         auto it = std::find(components.begin(), components.end(), this);
         if (it == components.end())
@@ -176,40 +187,44 @@ void Physics3DComponent::setSyncFlag(PhysicsSyncFlag syncFlag)
 
 void Physics3DComponent::syncPhysicsToNode()
 {
-    if (_physics3DObj->getObjType() == Physics3DObject::PhysicsObjType::RIGID_BODY)
-    {
-        Mat4 parentMat;
-        if (_owner->getParent())
-            parentMat = _owner->getParent()->getNodeToWorldTransform();
-        
-        auto mat = parentMat.getInversed() * _physics3DObj->getWorldTransform();
-        //remove scale, no scale support for physics
-        float oneOverLen = 1.f / sqrtf(mat.m[0] * mat.m[0] + mat.m[1] * mat.m[1] + mat.m[2] * mat.m[2]);
-        mat.m[0] *= oneOverLen;
-        mat.m[1] *= oneOverLen;
-        mat.m[2] *= oneOverLen;
-        oneOverLen = 1.f / sqrtf(mat.m[4] * mat.m[4] + mat.m[5] * mat.m[5] + mat.m[6] * mat.m[6]);
-        mat.m[4] *= oneOverLen;
-        mat.m[5] *= oneOverLen;
-        mat.m[6] *= oneOverLen;
-        oneOverLen = 1.f / sqrtf(mat.m[8] * mat.m[8] + mat.m[9] * mat.m[9] + mat.m[10] * mat.m[10]);
-        mat.m[8] *= oneOverLen;
-        mat.m[9] *= oneOverLen;
-        mat.m[10] *= oneOverLen;
-        
-        mat *= _transformInPhysics;
-        static Vec3 scale, translation;
-        static Quaternion quat;
-        mat.decompose(&scale, &quat, &translation);
-        _owner->setPosition3D(translation);
-        quat.normalize();
-        _owner->setRotationQuat(quat);
-    }
+	if (_physics3DObj->getObjType() == Physics3DObject::PhysicsObjType::RIGID_BODY ||
+		_physics3DObj->getObjType() == Physics3DObject::PhysicsObjType::GHOST_OBJ)
+	{
+		Mat4 parentMat;
+		if (_owner->getParent())
+			parentMat = _owner->getParent()->getNodeToWorldTransform();
+
+		auto mat = parentMat.getInversed() * _physics3DObj->getWorldTransform();
+		//remove scale, no scale support for physics
+		float oneOverLen = 1.f / sqrtf(mat.m[0] * mat.m[0] + mat.m[1] * mat.m[1] + mat.m[2] * mat.m[2]);
+		mat.m[0] *= oneOverLen;
+		mat.m[1] *= oneOverLen;
+		mat.m[2] *= oneOverLen;
+		oneOverLen = 1.f / sqrtf(mat.m[4] * mat.m[4] + mat.m[5] * mat.m[5] + mat.m[6] * mat.m[6]);
+		mat.m[4] *= oneOverLen;
+		mat.m[5] *= oneOverLen;
+		mat.m[6] *= oneOverLen;
+		oneOverLen = 1.f / sqrtf(mat.m[8] * mat.m[8] + mat.m[9] * mat.m[9] + mat.m[10] * mat.m[10]);
+		mat.m[8] *= oneOverLen;
+		mat.m[9] *= oneOverLen;
+		mat.m[10] *= oneOverLen;
+
+		mat *= _transformInPhysics;
+		static Vec3 scale, translation;
+		static Quaternion quat;
+		mat.decompose(&scale, &quat, &translation);
+		_owner->setPosition3D(translation);
+		quat.normalize();
+		_owner->setRotationQuat(quat);
+	}
+	else
+		assert(false);
 }
 
 void Physics3DComponent::syncNodeToPhysics()
 {
-    if (_physics3DObj->getObjType() == Physics3DObject::PhysicsObjType::RIGID_BODY)
+    if (_physics3DObj->getObjType() == Physics3DObject::PhysicsObjType::RIGID_BODY || 
+		_physics3DObj->getObjType() == Physics3DObject::PhysicsObjType::GHOST_OBJ)
     {
         auto mat = _owner->getNodeToWorldTransform();
         //remove scale, no scale support for physics
@@ -234,6 +249,13 @@ void Physics3DComponent::syncNodeToPhysics()
             motionState->setWorldTransform(convertMat4TobtTransform(mat));
             body->setMotionState(motionState);
         }
+		else if (_physics3DObj->getObjType() == Physics3DObject::PhysicsObjType::GHOST_OBJ)
+		{
+			auto body = static_cast<Physics3DGhostObj*>(_physics3DObj)->getGhostObj();
+			body->setWorldTransform(convertMat4TobtTransform(mat));
+		}
+		else
+			assert(false);
     }
 }
 

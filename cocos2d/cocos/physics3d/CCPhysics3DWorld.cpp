@@ -24,6 +24,7 @@
 
 #include "CCPhysics3D.h"
 #include "renderer/CCRenderer.h"
+#include "bullet/BulletCollision/CollisionDispatch/btGhostObject.h"
 
 #if CC_USE_3D_PHYSICS
 
@@ -128,9 +129,40 @@ void Physics3DWorld::addPhysics3DObject(Physics3DObject* physicsObj)
         {
             _btPhyiscsWorld->addRigidBody(static_cast<Physics3DRigidBody*>(physicsObj)->getRigidBody());
         }
+		else if (physicsObj->getObjType() == Physics3DObject::PhysicsObjType::GHOST_OBJ)
+		{
+			//How to add Ghost obj to world?
+			_btPhyiscsWorld->addCollisionObject((static_cast<Physics3DGhostObj*>(physicsObj))->getGhostObj());
+		}
+		else
+			assert(false);
+
         _collisionCheckingFlag = true;
     }
 }
+
+void Physics3DWorld::addPhysics3DObject(Physics3DObject* physicsObj, short g, short m)
+{
+	auto it = std::find(_objects.begin(), _objects.end(), physicsObj);
+	if (it == _objects.end())
+	{
+		_objects.push_back(physicsObj);
+		physicsObj->retain();
+		if (physicsObj->getObjType() == Physics3DObject::PhysicsObjType::RIGID_BODY)
+		{
+			_btPhyiscsWorld->addRigidBody(static_cast<Physics3DRigidBody*>(physicsObj)->getRigidBody(), g, m);
+		}
+		else if(physicsObj->getObjType() == Physics3DObject::PhysicsObjType::GHOST_OBJ)
+		{
+			_btPhyiscsWorld->addCollisionObject( (static_cast<Physics3DGhostObj*>(physicsObj))->getGhostObj(),g,m);
+		}
+		else
+			assert(false);
+
+		_collisionCheckingFlag = true;
+	}
+}
+
 
 void Physics3DWorld::removePhysics3DObject(Physics3DObject* physicsObj)
 {
@@ -141,6 +173,13 @@ void Physics3DWorld::removePhysics3DObject(Physics3DObject* physicsObj)
         {
             _btPhyiscsWorld->removeRigidBody(static_cast<Physics3DRigidBody*>(physicsObj)->getRigidBody());
         }
+		else if (physicsObj->getObjType() == Physics3DObject::PhysicsObjType::GHOST_OBJ)
+		{
+			_btPhyiscsWorld->removeCollisionObject(static_cast<Physics3DGhostObj*>(physicsObj)->getGhostObj());
+		}
+		else
+			assert(false);
+
         physicsObj->release();
         _objects.erase(it);
         _collisionCheckingFlag = true;
@@ -154,6 +193,13 @@ void Physics3DWorld::removeAllPhysics3DObjects()
         {
             _btPhyiscsWorld->removeRigidBody(static_cast<Physics3DRigidBody*>(it)->getRigidBody());
         }
+		else if (it->getObjType() == Physics3DObject::PhysicsObjType::GHOST_OBJ)
+		{
+			_btPhyiscsWorld->removeCollisionObject(static_cast<Physics3DGhostObj*>(it)->getGhostObj());
+		}
+		else
+			assert(false);
+
         it->release();
     }
     _objects.clear();
@@ -277,7 +323,16 @@ Physics3DObject* Physics3DWorld::getPhysicsObject(const btCollisionObject* btObj
         {
             if (static_cast<Physics3DRigidBody*>(it)->getRigidBody() == btObj)
                 return it;
+        }else if (it->getObjType() == Physics3DObject::PhysicsObjType::GHOST_OBJ)
+        {
+			if (static_cast<Physics3DGhostObj*>(it)->getGhostObj() == btObj)
+				return it;
         }
+		else
+		{
+			assert(false);
+		}
+        
     }
     return nullptr;
 }

@@ -31,6 +31,7 @@
 
 #include "bullet/btBulletCollisionCommon.h"
 #include "bullet/btBulletDynamicsCommon.h"
+#include "bullet/BulletCollision/CollisionDispatch/btGhostObject.h"
 
 NS_CC_BEGIN
 
@@ -369,6 +370,82 @@ bool Physics3DRigidBody::isKinematic() const
         return _btRigidBody->isKinematicObject();
     return false;
 }
+
+//////////////////////////////////////////////////////////////////////////
+
+Physics3DGhostObj* Physics3DGhostObj::create(Physics3DGhostObjDes* info)
+{
+	auto ret = new (std::nothrow) Physics3DGhostObj();
+	if (ret->init(info))
+	{
+		ret->autorelease();
+		return ret;
+	}
+	CC_SAFE_DELETE(ret);
+	return ret;
+}
+
+Physics3DGhostObj::Physics3DGhostObj() : _btGhostObj(nullptr), _ghost3DShape(nullptr)
+{
+
+}
+
+Physics3DGhostObj::~Physics3DGhostObj()
+{
+	if (_physicsWorld)
+	{
+// 		for (auto constraint : _constraintList)
+// 		{
+// 			_physicsWorld->removePhysics3DConstraint(constraint);
+// 		}
+// 		_constraintList.clear();
+	}
+//	CC_SAFE_DELETE(ms);
+	CC_SAFE_DELETE(_btGhostObj);
+	CC_SAFE_RELEASE(_ghost3DShape);
+}
+
+//TODO: how to create a ghost body
+bool Physics3DGhostObj::init(Physics3DGhostObjDes* info)
+{
+// 	if (info->shape == nullptr)
+// 		return false;
+// 
+// 	btScalar mass = info->mass;
+	auto shape = info->shape->getbtShape();
+//	auto localInertia = convertVec3TobtVector3(info->localInertia);
+// 	if (mass != 0.f)
+// 	{
+// 		shape->calculateLocalInertia(mass, localInertia);
+// 	}
+
+	auto transform = convertMat4TobtTransform(info->originalTransform);
+//	btDefaultMotionState* myMotionState = new btDefaultMotionState(transform);
+//	btGhostObject::btGohostObjectConstructionInfo rbInfo(mass, myMotionState, shape, localInertia);
+	_btGhostObj = new btGhostObject(); //btPairCachingGhostObject();
+	_btGhostObj->setCollisionShape(shape);
+
+	_btGhostObj->setCollisionFlags(_btGhostObj->getCollisionFlags() | btCollisionObject::CF_NO_CONTACT_RESPONSE);
+	btDefaultMotionState* myMotionState = new btDefaultMotionState(transform);
+//	btTransform btm();
+//	m_optionalMotionState->getWorldTransform(m_worldTransform);
+	_btGhostObj->setWorldTransform(transform);
+
+	_type = Physics3DObject::PhysicsObjType::GHOST_OBJ;
+	_ghost3DShape = info->shape;
+	_ghost3DShape->retain();
+	if (info->disableSleep)
+		_btGhostObj->setActivationState(DISABLE_DEACTIVATION);
+	return true;
+}
+
+cocos2d::Mat4 Physics3DGhostObj::getWorldTransform() const
+{
+	const auto& transform = _btGhostObj->getWorldTransform();
+	return convertbtTransformToMat4(transform);
+}
+
+
 
 NS_CC_END
 
