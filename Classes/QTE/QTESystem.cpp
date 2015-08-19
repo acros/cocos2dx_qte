@@ -50,7 +50,7 @@ void QteSystem::trigger(const std::string& qteName, std::function<void(QTE_Resul
 
 	//TODO: how we set the params ?
 	mPreSetInfo = new QteInfo();
-	mPreSetInfo->mType = QTE_TYPE::QTE_Normal;
+	mPreSetInfo->mType = QTE_TYPE::QTE_Click;
 	trigger(mPreSetInfo);
 }
 
@@ -102,7 +102,7 @@ void QteSystem::finish()
 
 bool QteSystem::prepare()
 {
-	if (mCurrInfo->mType == QTE_TYPE::QTE_Normal)
+	if (mCurrInfo->mType == QTE_TYPE::QTE_Click)
 	{
 		mHander = QteHandlerStandard::create(mCurrInfo);
 		mLayer = QteLayerStandard::create();

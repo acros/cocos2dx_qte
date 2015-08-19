@@ -18,6 +18,8 @@ public:
 	char	text[256];
 }	gGameVersion;
 
+GameWorld AppDelegate::mGameWorld;
+
 AppDelegate::AppDelegate() {
 
 }

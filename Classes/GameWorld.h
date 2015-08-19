@@ -2,6 +2,7 @@
 #define __GAME_WORLD_H__
 
 #include "cocos2d.h"
+#include "Scene/MainGameScene.h"
 
 USING_NS_CC;
 
@@ -14,9 +15,11 @@ public:
 	void runGame();
 	void quitGame();
 
+	void reset();
+
 protected:
 
-	RefPtr<Scene>		mCurrScene;
+	RefPtr<MainGameScene>		mCurrScene;
 };
 
 #endif

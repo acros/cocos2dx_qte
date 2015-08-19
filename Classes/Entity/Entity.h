@@ -27,6 +27,9 @@ CC_CONSTRUCTOR_ACCESS:
 	virtual ~Entity();
 
 	virtual bool init();
+
+	virtual void resetGame()	{}
+
 public:
 //	CREATE_FUNC(Entity);
 

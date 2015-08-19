@@ -36,9 +36,10 @@ public:
     */
     virtual void applicationWillEnterForeground();
 
+	static GameWorld&	getGameWorld()	{ return mGameWorld; }
 
 protected:
-	GameWorld	mGameWorld;
+	static GameWorld	mGameWorld;
 };
 
 #endif // _APP_DELEGATE_H_

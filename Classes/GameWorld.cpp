@@ -1,5 +1,4 @@
 #include "GameWorld.h"
-#include "Scene/MainGameScene.h"
 #include "QTE/QTESystem.h"
 
 GameWorld::GameWorld()
@@ -23,5 +22,13 @@ void GameWorld::runGame()
 void GameWorld::quitGame()
 {
 	mCurrScene = nullptr;
+}
+
+void GameWorld::reset()
+{
+	if (mCurrScene != nullptr)
+	{
+		mCurrScene->resetGame();
+	}
 }
 

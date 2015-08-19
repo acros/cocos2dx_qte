@@ -25,6 +25,12 @@
     <Filter Include="src\QTE">
       <UniqueIdentifier>{94264af6-64da-4b40-9e86-704858618364}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\QTE\Layer">
+      <UniqueIdentifier>{de544e8f-0a96-4140-828b-c4f2207eda4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\QTE\Handler">
+      <UniqueIdentifier>{d1e56721-81d7-466d-8a3e-07bdd3c46dee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -54,22 +60,10 @@
     <ClCompile Include="..\Classes\Scene\MainGameScene.cpp">
       <Filter>src\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\QTE\QteHandlerStandard.cpp">
-      <Filter>src\QTE</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\QTE\QteInfo.cpp">
       <Filter>src\QTE</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\QTE\QteLayer.cpp">
-      <Filter>src\QTE</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\QTE\QteLayerStandard.cpp">
-      <Filter>src\QTE</Filter>
-    </ClCompile>
     <ClCompile Include="..\Classes\QTE\QTESystem.cpp">
-      <Filter>src\QTE</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\QTE\QteHandler.cpp">
       <Filter>src\QTE</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Predefines.cpp">
@@ -77,6 +71,18 @@
     </ClCompile>
     <ClCompile Include="..\Classes\Entity\Slime.cpp">
       <Filter>src\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QTE\QteLayer.cpp">
+      <Filter>src\QTE\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QTE\QteLayerStandard.cpp">
+      <Filter>src\QTE\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QTE\QteHandler.cpp">
+      <Filter>src\QTE\Handler</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\QTE\QteHandlerStandard.cpp">
+      <Filter>src\QTE\Handler</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -113,26 +119,26 @@
     <ClInclude Include="..\Classes\Scene\MainGameScene.h">
       <Filter>src\Scene</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\QTE\QteHandlerStandard.h">
-      <Filter>src\QTE</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\QTE\QteInfo.h">
-      <Filter>src\QTE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\QTE\QteLayer.h">
-      <Filter>src\QTE</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\QTE\QteLayerStandard.h">
       <Filter>src\QTE</Filter>
     </ClInclude>
     <ClInclude Include="..\Classes\QTE\QTESystem.h">
       <Filter>src\QTE</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\QTE\QteHandler.h">
-      <Filter>src\QTE</Filter>
-    </ClInclude>
     <ClInclude Include="..\Classes\Entity\Slime.h">
       <Filter>src\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QTE\QteLayerStandard.h">
+      <Filter>src\QTE\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QTE\QteLayer.h">
+      <Filter>src\QTE\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QTE\QteHandler.h">
+      <Filter>src\QTE\Handler</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\QTE\QteHandlerStandard.h">
+      <Filter>src\QTE\Handler</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

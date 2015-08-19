@@ -1,6 +1,7 @@
 #include "HudLayer.h"
 #include "cocostudio/ActionTimeline/CSLoader.h"
 #include "Ui/UIHelper.h"
+#include "AppDelegate.h"
 
 USING_NS_CC;
 
@@ -30,19 +31,19 @@ bool HudLayer::init()
 	ui::Helper::doLayout(m_Hud);
 
 // 	m_LeftBtn = static_cast<ui::Button*>(m_Hud->getChildByName("global_anchor_lb")->getChildByName("Btn_Left"));
-// 	m_RightBtn = static_cast<ui::Button*>(m_Hud->getChildByName("global_anchor_rb")->getChildByName("Btn_Right"));
-	m_AttackBtn = static_cast<ui::Button*>(m_Hud->getChildByName("global_anchor_rb")->getChildByName("Btn_Attack"));
-
 // 	m_LeftBtn->addTouchEventListener(CC_CALLBACK_2(HudLayer::onLeftControlTouch, this));
+
+// 	m_RightBtn = static_cast<ui::Button*>(m_Hud->getChildByName("global_anchor_rb")->getChildByName("Btn_Right"));
 // 	m_RightBtn->addTouchEventListener(CC_CALLBACK_2(HudLayer::onRightControlTouch, this));
-	m_AttackBtn->addClickEventListener(CC_CALLBACK_1(HudLayer::onAttackBtnClick, this));
+	
+//	m_AttackBtn = static_cast<ui::Button*>(m_Hud->getChildByName("global_anchor_rb")->getChildByName("Btn_Attack"));
+//	m_AttackBtn->addClickEventListener(CC_CALLBACK_1(HudLayer::onAttackBtnClick, this));
 
 	m_StartBtn = static_cast<ui::Button*>(m_Hud->getChildByName("global_anchor_rb")->getChildByName("startBtn"));
 	m_StartBtn->addClickEventListener(CC_CALLBACK_1(HudLayer::onEnemyAttack, this));
 
-	m_StartBtn = static_cast<ui::Button*>(m_Hud->getChildByName("global_anchor_rb")->getChildByName("resetBtn"));
-	m_StartBtn->addClickEventListener(CC_CALLBACK_0(HudLayer::resetGame, this));
-
+	m_ResetBtn = static_cast<ui::Button*>(m_Hud->getChildByName("global_anchor_rb")->getChildByName("resetBtn"));
+	m_ResetBtn->addClickEventListener(CC_CALLBACK_0(HudLayer::resetGame, this));
 
 	scheduleUpdate();
 
@@ -127,6 +128,6 @@ void HudLayer::setEnemyAttack(std::function<void()> enemyAttackCallBack)
 
 void HudLayer::resetGame()
 {
-
+	AppDelegate::getGameWorld().reset(); 
 }
 

@@ -12,7 +12,8 @@ enum class QTE_Result
 
 enum class QTE_TYPE
 {
-	QTE_Normal,
+	QTE_Unknow,
+	QTE_Click
 };
 
 class QteInfo{

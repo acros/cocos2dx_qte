@@ -40,7 +40,7 @@ bool Soldier::init()
 	component->syncNodeToPhysics();
 	component->setSyncFlag(Physics3DComponent::PhysicsSyncFlag::NODE_TO_PHYSICS);
 
-	//The large one for QTE
+	//Physics3DGhostObj as volume trigger for QTE
 	Physics3DGhostObjDes qteDes;
 	qteDes.shape = Physics3DShape::createSphere(40.f);
 	auto ghostBody = Physics3DGhostObj::create(&qteDes);
@@ -53,11 +53,11 @@ bool Soldier::init()
 	component2->syncNodeToPhysics();
 	component2->setSyncFlag(Physics3DComponent::PhysicsSyncFlag::NODE_TO_PHYSICS);
 
-	rigidBody->setCollisionCallback(CC_CALLBACK_1(Soldier::hitCallback,this));
-	ghostBody->setCollisionCallback(CC_CALLBACK_1(Soldier::qteTriggerCallback, this));
+//	rigidBody->setCollisionCallback(CC_CALLBACK_1(Soldier::hitCallback,this));
+//	ghostBody->setCollisionCallback(CC_CALLBACK_1(Soldier::qteTriggerCallback, this));
 
 	rigidBody->setMask(CM_Soldier);
-	ghostBody->setMask(CM_Soldier);
+	ghostBody->setMask(CM_SoldierQTE);
 
 	m_Appearence = sprite;
 	addChild(m_Appearence);
@@ -99,9 +99,8 @@ void Soldier::doAttack()
 		m_ComboStage = CS_ATTACK_I;
 		m_Appearence->runAction(createAnimAction(m_AttackAnim, false));
 
-		CCLOG("Attack start");
-		QteSystem::getInstance()->trigger("",nullptr);
-
+		CCLOG("Sword Attack I");
+//		QteSystem::getInstance()->trigger("",nullptr);
 	}
 	else
 	{
@@ -134,7 +133,6 @@ void Soldier::attackFrameCall(bool state)
 {
 	m_CriticalTime = state;
 
-	//if trigger the combo attack , immedataly start it !
 	if (!state)
 	{
 		if (m_ComboStage == CS_ATTACK_II)

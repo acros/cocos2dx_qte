@@ -16,8 +16,10 @@ public:
 	CREATE_FUNC(Slime);
 
 	void attack();
+	virtual void resetGame()override;
 
 protected:
+	virtual	void qteTriggerCallback(const Physics3DCollisionInfo &ci);
 
 	enum class AttackState
 	{
@@ -25,6 +27,10 @@ protected:
 		AS_SLEEPING,
 		AS_READY,
 	}		mAttackState;
+
+
+	bool	 m_CanTriggerQTE;
+
 
 };
 

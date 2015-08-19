@@ -44,10 +44,10 @@ protected:
 
 	RefPtr<Node>		m_Hud;
 
-	RefPtr<ui::Button>		m_LeftBtn;
-	RefPtr<ui::Button>		m_RightBtn;
-	RefPtr<ui::Button>		m_AttackBtn;
+// 	RefPtr<ui::Button>		m_LeftBtn;
+// 	RefPtr<ui::Button>		m_RightBtn;
 	RefPtr<ui::Button>		m_StartBtn;
+	RefPtr<ui::Button>		m_ResetBtn;
 
 
 	//DirectionState		m_DirState;

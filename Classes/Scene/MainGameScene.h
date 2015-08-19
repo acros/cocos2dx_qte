@@ -15,6 +15,8 @@ CC_CONSTRUCTOR_ACCESS:
 public:
 	CREATE_FUNC(MainGameScene);
 
+	void resetGame();
+
 private:
 	CC_DISALLOW_COPY_AND_ASSIGN(MainGameScene);
 

@@ -100,4 +100,16 @@ void MainGameScene::onKeyPress(EventKeyboard::KeyCode code, Event* ev)
 	}
 }
 
+void MainGameScene::resetGame()
+{
+	for (auto child : mGameLayer->getChildren())
+	{
+		auto ptr = dynamic_cast<Entity*>(child);
+		if (ptr != nullptr)
+		{
+			ptr->resetGame();
+		}
+	}
+}
+
 #endif
