@@ -1,7 +1,7 @@
 #include "MainGameScene.h"
-#include "Entity/Soldier.h"
 #include "Entity/Ground.h"
 #include "Entity/Slime.h"
+#include "Entity/Soldier.h"
 #include "QTE/QTESystem.h"
 #include "HUD/HudLayer.h"
 #include "physics3d/CCPhysics3D.h"
@@ -100,16 +100,17 @@ void MainGameScene::onKeyPress(EventKeyboard::KeyCode code, Event* ev)
 	}
 }
 
+#endif
+
+
 void MainGameScene::resetGame()
 {
-	for (auto child : mGameLayer->getChildren())
-	{
-		auto ptr = dynamic_cast<Entity*>(child);
-		if (ptr != nullptr)
-		{
-			ptr->resetGame();
-		}
-	}
+    for (auto child : mGameLayer->getChildren())
+    {
+        auto ptr = dynamic_cast<Entity*>(child);
+        if (ptr != nullptr)
+        {
+            ptr->resetGame();
+        }
+    }
 }
-
-#endif

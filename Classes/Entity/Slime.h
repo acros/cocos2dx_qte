@@ -2,6 +2,7 @@
 #define _ENTITY_SLIME_H__
 
 #include "Entity.h"
+#include "physics3d/CCPhysics3DObject.h"
 
 USING_NS_CC;
 

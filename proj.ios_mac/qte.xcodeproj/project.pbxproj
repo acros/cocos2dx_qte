@@ -11,19 +11,51 @@
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		226465611B84FA940076BCCB /* Animate3DWithEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2264653E1B84FA940076BCCB /* Animate3DWithEvent.cpp */; };
+		226465621B84FA940076BCCB /* Animate3DWithEvent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2264653E1B84FA940076BCCB /* Animate3DWithEvent.cpp */; };
+		226465631B84FA940076BCCB /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 226465411B84FA940076BCCB /* Entity.cpp */; };
+		226465641B84FA940076BCCB /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 226465411B84FA940076BCCB /* Entity.cpp */; };
+		226465651B84FA940076BCCB /* Ground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 226465441B84FA940076BCCB /* Ground.cpp */; };
+		226465661B84FA940076BCCB /* Ground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 226465441B84FA940076BCCB /* Ground.cpp */; };
+		226465671B84FA940076BCCB /* Slime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 226465461B84FA940076BCCB /* Slime.cpp */; };
+		226465681B84FA940076BCCB /* Slime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 226465461B84FA940076BCCB /* Slime.cpp */; };
+		226465691B84FA940076BCCB /* Soldier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 226465481B84FA940076BCCB /* Soldier.cpp */; };
+		2264656A1B84FA940076BCCB /* Soldier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 226465481B84FA940076BCCB /* Soldier.cpp */; };
+		2264656B1B84FA940076BCCB /* GameWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2264654A1B84FA940076BCCB /* GameWorld.cpp */; };
+		2264656C1B84FA940076BCCB /* GameWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2264654A1B84FA940076BCCB /* GameWorld.cpp */; };
+		2264656D1B84FA940076BCCB /* HudLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2264654D1B84FA940076BCCB /* HudLayer.cpp */; };
+		2264656E1B84FA940076BCCB /* HudLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2264654D1B84FA940076BCCB /* HudLayer.cpp */; };
+		2264656F1B84FA940076BCCB /* Predefines.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2264654F1B84FA940076BCCB /* Predefines.cpp */; };
+		226465701B84FA940076BCCB /* Predefines.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2264654F1B84FA940076BCCB /* Predefines.cpp */; };
+		226465711B84FA940076BCCB /* QteHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 226465521B84FA940076BCCB /* QteHandler.cpp */; };
+		226465721B84FA940076BCCB /* QteHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 226465521B84FA940076BCCB /* QteHandler.cpp */; };
+		226465731B84FA940076BCCB /* QteHandlerStandard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 226465541B84FA940076BCCB /* QteHandlerStandard.cpp */; };
+		226465741B84FA940076BCCB /* QteHandlerStandard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 226465541B84FA940076BCCB /* QteHandlerStandard.cpp */; };
+		226465751B84FA940076BCCB /* QteInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 226465561B84FA940076BCCB /* QteInfo.cpp */; };
+		226465761B84FA940076BCCB /* QteInfo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 226465561B84FA940076BCCB /* QteInfo.cpp */; };
+		226465771B84FA940076BCCB /* QteLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 226465581B84FA940076BCCB /* QteLayer.cpp */; };
+		226465781B84FA940076BCCB /* QteLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 226465581B84FA940076BCCB /* QteLayer.cpp */; };
+		226465791B84FA940076BCCB /* QteLayerStandard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2264655A1B84FA940076BCCB /* QteLayerStandard.cpp */; };
+		2264657A1B84FA940076BCCB /* QteLayerStandard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2264655A1B84FA940076BCCB /* QteLayerStandard.cpp */; };
+		2264657B1B84FA940076BCCB /* QTESystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2264655C1B84FA940076BCCB /* QTESystem.cpp */; };
+		2264657C1B84FA940076BCCB /* QTESystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2264655C1B84FA940076BCCB /* QTESystem.cpp */; };
+		2264657D1B84FA940076BCCB /* MainGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2264655F1B84FA940076BCCB /* MainGameScene.cpp */; };
+		2264657E1B84FA940076BCCB /* MainGameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2264655F1B84FA940076BCCB /* MainGameScene.cpp */; };
+		226465851B84FABA0076BCCB /* Button in Resources */ = {isa = PBXBuildFile; fileRef = 2264657F1B84FABA0076BCCB /* Button */; };
+		226465861B84FABA0076BCCB /* Button in Resources */ = {isa = PBXBuildFile; fileRef = 2264657F1B84FABA0076BCCB /* Button */; };
+		226465871B84FABA0076BCCB /* csb in Resources */ = {isa = PBXBuildFile; fileRef = 226465801B84FABA0076BCCB /* csb */; };
+		226465881B84FABA0076BCCB /* csb in Resources */ = {isa = PBXBuildFile; fileRef = 226465801B84FABA0076BCCB /* csb */; };
+		226465891B84FABA0076BCCB /* Default in Resources */ = {isa = PBXBuildFile; fileRef = 226465811B84FABA0076BCCB /* Default */; };
+		2264658A1B84FABA0076BCCB /* Default in Resources */ = {isa = PBXBuildFile; fileRef = 226465811B84FABA0076BCCB /* Default */; };
+		2264658B1B84FABA0076BCCB /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 226465821B84FABA0076BCCB /* fonts */; };
+		2264658C1B84FABA0076BCCB /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 226465821B84FABA0076BCCB /* fonts */; };
+		2264658D1B84FABA0076BCCB /* HUD in Resources */ = {isa = PBXBuildFile; fileRef = 226465831B84FABA0076BCCB /* HUD */; };
+		2264658E1B84FABA0076BCCB /* HUD in Resources */ = {isa = PBXBuildFile; fileRef = 226465831B84FABA0076BCCB /* HUD */; };
+		2264658F1B84FABA0076BCCB /* model in Resources */ = {isa = PBXBuildFile; fileRef = 226465841B84FABA0076BCCB /* model */; };
+		226465901B84FABA0076BCCB /* model in Resources */ = {isa = PBXBuildFile; fileRef = 226465841B84FABA0076BCCB /* model */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
-		3EACC98F19EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
-		3EACC99019EE6D4300EB3C5E /* res in Resources */ = {isa = PBXBuildFile; fileRef = 3EACC98E19EE6D4300EB3C5E /* res */; };
-		46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
-		46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7619C43A67006E1F66 /* CloseNormal.png */; };
-		46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7719C43A67006E1F66 /* CloseSelected.png */; };
-		46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7719C43A67006E1F66 /* CloseSelected.png */; };
-		46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7A19C43A67006E1F66 /* HelloWorld.png */; };
-		46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */ = {isa = PBXBuildFile; fileRef = 46880B7A19C43A67006E1F66 /* HelloWorld.png */; };
 		46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
 		46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8419C43A87006E1F66 /* AppDelegate.cpp */; };
-		46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
-		46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -56,8 +88,6 @@
 		50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 50EF62A117ECD613001EB2F8 /* Icon-50.png */; };
 		521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6219F0C34300D177D7 /* Default-667h@2x.png */; };
 		521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 521A8E6319F0C34300D177D7 /* Default-736h@3x.png */; };
-		521A8EA919F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
-		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
@@ -106,15 +136,46 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* qte-mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "qte-mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2264653E1B84FA940076BCCB /* Animate3DWithEvent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animate3DWithEvent.cpp; sourceTree = "<group>"; };
+		2264653F1B84FA940076BCCB /* Animate3DWithEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animate3DWithEvent.h; sourceTree = "<group>"; };
+		226465411B84FA940076BCCB /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
+		226465421B84FA940076BCCB /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		226465431B84FA940076BCCB /* EntityUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntityUtils.h; sourceTree = "<group>"; };
+		226465441B84FA940076BCCB /* Ground.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ground.cpp; sourceTree = "<group>"; };
+		226465451B84FA940076BCCB /* Ground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ground.h; sourceTree = "<group>"; };
+		226465461B84FA940076BCCB /* Slime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Slime.cpp; sourceTree = "<group>"; };
+		226465471B84FA940076BCCB /* Slime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Slime.h; sourceTree = "<group>"; };
+		226465481B84FA940076BCCB /* Soldier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Soldier.cpp; sourceTree = "<group>"; };
+		226465491B84FA940076BCCB /* Soldier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Soldier.h; sourceTree = "<group>"; };
+		2264654A1B84FA940076BCCB /* GameWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameWorld.cpp; sourceTree = "<group>"; };
+		2264654B1B84FA940076BCCB /* GameWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameWorld.h; sourceTree = "<group>"; };
+		2264654D1B84FA940076BCCB /* HudLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HudLayer.cpp; sourceTree = "<group>"; };
+		2264654E1B84FA940076BCCB /* HudLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudLayer.h; sourceTree = "<group>"; };
+		2264654F1B84FA940076BCCB /* Predefines.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Predefines.cpp; sourceTree = "<group>"; };
+		226465501B84FA940076BCCB /* Predefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Predefines.h; sourceTree = "<group>"; };
+		226465521B84FA940076BCCB /* QteHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QteHandler.cpp; sourceTree = "<group>"; };
+		226465531B84FA940076BCCB /* QteHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QteHandler.h; sourceTree = "<group>"; };
+		226465541B84FA940076BCCB /* QteHandlerStandard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QteHandlerStandard.cpp; sourceTree = "<group>"; };
+		226465551B84FA940076BCCB /* QteHandlerStandard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QteHandlerStandard.h; sourceTree = "<group>"; };
+		226465561B84FA940076BCCB /* QteInfo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QteInfo.cpp; sourceTree = "<group>"; };
+		226465571B84FA940076BCCB /* QteInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QteInfo.h; sourceTree = "<group>"; };
+		226465581B84FA940076BCCB /* QteLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QteLayer.cpp; sourceTree = "<group>"; };
+		226465591B84FA940076BCCB /* QteLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QteLayer.h; sourceTree = "<group>"; };
+		2264655A1B84FA940076BCCB /* QteLayerStandard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QteLayerStandard.cpp; sourceTree = "<group>"; };
+		2264655B1B84FA940076BCCB /* QteLayerStandard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QteLayerStandard.h; sourceTree = "<group>"; };
+		2264655C1B84FA940076BCCB /* QTESystem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = QTESystem.cpp; sourceTree = "<group>"; };
+		2264655D1B84FA940076BCCB /* QTESystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTESystem.h; sourceTree = "<group>"; };
+		2264655F1B84FA940076BCCB /* MainGameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MainGameScene.cpp; sourceTree = "<group>"; };
+		226465601B84FA940076BCCB /* MainGameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainGameScene.h; sourceTree = "<group>"; };
+		2264657F1B84FABA0076BCCB /* Button */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Button; sourceTree = "<group>"; };
+		226465801B84FABA0076BCCB /* csb */ = {isa = PBXFileReference; lastKnownFileType = folder; path = csb; sourceTree = "<group>"; };
+		226465811B84FABA0076BCCB /* Default */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Default; sourceTree = "<group>"; };
+		226465821B84FABA0076BCCB /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
+		226465831B84FABA0076BCCB /* HUD */ = {isa = PBXFileReference; lastKnownFileType = folder; path = HUD; sourceTree = "<group>"; };
+		226465841B84FABA0076BCCB /* model */ = {isa = PBXFileReference; lastKnownFileType = folder; path = model; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		3EACC98E19EE6D4300EB3C5E /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
-		46880B7619C43A67006E1F66 /* CloseNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseNormal.png; sourceTree = "<group>"; };
-		46880B7719C43A67006E1F66 /* CloseSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CloseSelected.png; sourceTree = "<group>"; };
-		46880B7A19C43A67006E1F66 /* HelloWorld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HelloWorld.png; sourceTree = "<group>"; };
 		46880B8419C43A87006E1F66 /* AppDelegate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppDelegate.cpp; sourceTree = "<group>"; };
 		46880B8519C43A87006E1F66 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HelloWorldScene.cpp; sourceTree = "<group>"; };
-		46880B8719C43A87006E1F66 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -149,7 +210,6 @@
 		50EF62A117ECD613001EB2F8 /* Icon-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-50.png"; sourceTree = "<group>"; };
 		521A8E6219F0C34300D177D7 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
 		521A8E6319F0C34300D177D7 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
-		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		8262943D1AAF051F00CB7CF7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -235,6 +295,68 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2264653D1B84FA940076BCCB /* EngineEx */ = {
+			isa = PBXGroup;
+			children = (
+				2264653E1B84FA940076BCCB /* Animate3DWithEvent.cpp */,
+				2264653F1B84FA940076BCCB /* Animate3DWithEvent.h */,
+			);
+			path = EngineEx;
+			sourceTree = "<group>";
+		};
+		226465401B84FA940076BCCB /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				226465411B84FA940076BCCB /* Entity.cpp */,
+				226465421B84FA940076BCCB /* Entity.h */,
+				226465431B84FA940076BCCB /* EntityUtils.h */,
+				226465441B84FA940076BCCB /* Ground.cpp */,
+				226465451B84FA940076BCCB /* Ground.h */,
+				226465461B84FA940076BCCB /* Slime.cpp */,
+				226465471B84FA940076BCCB /* Slime.h */,
+				226465481B84FA940076BCCB /* Soldier.cpp */,
+				226465491B84FA940076BCCB /* Soldier.h */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		2264654C1B84FA940076BCCB /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				2264654D1B84FA940076BCCB /* HudLayer.cpp */,
+				2264654E1B84FA940076BCCB /* HudLayer.h */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
+		226465511B84FA940076BCCB /* QTE */ = {
+			isa = PBXGroup;
+			children = (
+				226465521B84FA940076BCCB /* QteHandler.cpp */,
+				226465531B84FA940076BCCB /* QteHandler.h */,
+				226465541B84FA940076BCCB /* QteHandlerStandard.cpp */,
+				226465551B84FA940076BCCB /* QteHandlerStandard.h */,
+				226465561B84FA940076BCCB /* QteInfo.cpp */,
+				226465571B84FA940076BCCB /* QteInfo.h */,
+				226465581B84FA940076BCCB /* QteLayer.cpp */,
+				226465591B84FA940076BCCB /* QteLayer.h */,
+				2264655A1B84FA940076BCCB /* QteLayerStandard.cpp */,
+				2264655B1B84FA940076BCCB /* QteLayerStandard.h */,
+				2264655C1B84FA940076BCCB /* QTESystem.cpp */,
+				2264655D1B84FA940076BCCB /* QTESystem.h */,
+			);
+			path = QTE;
+			sourceTree = "<group>";
+		};
+		2264655E1B84FA940076BCCB /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				2264655F1B84FA940076BCCB /* MainGameScene.cpp */,
+				226465601B84FA940076BCCB /* MainGameScene.h */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,11 +398,12 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				521A8EA819F11F5000D177D7 /* fonts */,
-				3EACC98E19EE6D4300EB3C5E /* res */,
-				46880B7619C43A67006E1F66 /* CloseNormal.png */,
-				46880B7719C43A67006E1F66 /* CloseSelected.png */,
-				46880B7A19C43A67006E1F66 /* HelloWorld.png */,
+				2264657F1B84FABA0076BCCB /* Button */,
+				226465801B84FABA0076BCCB /* csb */,
+				226465811B84FABA0076BCCB /* Default */,
+				226465821B84FABA0076BCCB /* fonts */,
+				226465831B84FABA0076BCCB /* HUD */,
+				226465841B84FABA0076BCCB /* model */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -289,10 +412,17 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2264653D1B84FA940076BCCB /* EngineEx */,
+				226465401B84FA940076BCCB /* Entity */,
+				2264654A1B84FA940076BCCB /* GameWorld.cpp */,
+				2264654B1B84FA940076BCCB /* GameWorld.h */,
+				2264654C1B84FA940076BCCB /* HUD */,
+				2264654F1B84FA940076BCCB /* Predefines.cpp */,
+				226465501B84FA940076BCCB /* Predefines.h */,
+				226465511B84FA940076BCCB /* QTE */,
+				2264655E1B84FA940076BCCB /* Scene */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
-				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
-				46880B8719C43A87006E1F66 /* HelloWorldScene.h */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -450,24 +580,25 @@
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
-				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
-				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
+				2264658F1B84FABA0076BCCB /* model in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
+				226465871B84FABA0076BCCB /* csb in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
-				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
+				2264658B1B84FABA0076BCCB /* fonts in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
+				2264658D1B84FABA0076BCCB /* HUD in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
-				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
 				521A8E6419F0C34300D177D7 /* Default-667h@2x.png in Resources */,
-				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
+				226465891B84FABA0076BCCB /* Default in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
+				226465851B84FABA0076BCCB /* Button in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,12 +606,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */,
+				2264658E1B84FABA0076BCCB /* HUD in Resources */,
+				2264658A1B84FABA0076BCCB /* Default in Resources */,
+				226465901B84FABA0076BCCB /* model in Resources */,
+				2264658C1B84FABA0076BCCB /* fonts in Resources */,
+				226465881B84FABA0076BCCB /* csb in Resources */,
+				226465861B84FABA0076BCCB /* Button in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
-				3EACC99019EE6D4300EB3C5E /* res in Resources */,
-				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
-				46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */,
-				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,11 +623,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2264656F1B84FA940076BCCB /* Predefines.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
-				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				2264656B1B84FA940076BCCB /* GameWorld.cpp in Sources */,
+				2264657D1B84FA940076BCCB /* MainGameScene.cpp in Sources */,
+				226465771B84FA940076BCCB /* QteLayer.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				226465691B84FA940076BCCB /* Soldier.cpp in Sources */,
+				226465611B84FA940076BCCB /* Animate3DWithEvent.cpp in Sources */,
+				226465671B84FA940076BCCB /* Slime.cpp in Sources */,
+				226465631B84FA940076BCCB /* Entity.cpp in Sources */,
+				2264656D1B84FA940076BCCB /* HudLayer.cpp in Sources */,
+				226465751B84FA940076BCCB /* QteInfo.cpp in Sources */,
+				226465731B84FA940076BCCB /* QteHandlerStandard.cpp in Sources */,
+				226465791B84FA940076BCCB /* QteLayerStandard.cpp in Sources */,
+				226465651B84FA940076BCCB /* Ground.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				226465711B84FA940076BCCB /* QteHandler.cpp in Sources */,
+				2264657B1B84FA940076BCCB /* QTESystem.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,9 +649,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				226465741B84FA940076BCCB /* QteHandlerStandard.cpp in Sources */,
+				2264656C1B84FA940076BCCB /* GameWorld.cpp in Sources */,
+				226465641B84FA940076BCCB /* Entity.cpp in Sources */,
+				2264656E1B84FA940076BCCB /* HudLayer.cpp in Sources */,
+				226465781B84FA940076BCCB /* QteLayer.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
+				226465681B84FA940076BCCB /* Slime.cpp in Sources */,
+				226465621B84FA940076BCCB /* Animate3DWithEvent.cpp in Sources */,
+				2264657E1B84FA940076BCCB /* MainGameScene.cpp in Sources */,
+				226465701B84FA940076BCCB /* Predefines.cpp in Sources */,
+				226465761B84FA940076BCCB /* QteInfo.cpp in Sources */,
+				226465721B84FA940076BCCB /* QteHandler.cpp in Sources */,
+				226465661B84FA940076BCCB /* Ground.cpp in Sources */,
+				2264657A1B84FA940076BCCB /* QteLayerStandard.cpp in Sources */,
+				2264657C1B84FA940076BCCB /* QTESystem.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
-				46880B8B19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				2264656A1B84FA940076BCCB /* Soldier.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,12 +700,18 @@
 					CC_TARGET_OS_IPHONE,
 					"COCOS2D_DEBUG=1",
 					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
+					"CC_ENABLE_BULLET_INTEGRATION=1",
+					"CC_USE_3D_PHYSICS=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios",
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios/Simulation",
+					"$(SRCROOT)/../cocos2d/external",
+					"$(SRCROOT)/../cocos2d/cocos",
+					"$(SRCROOT)/../cocos2d/extensions",
+					"$(SRCROOT)/../Classes",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -574,12 +740,18 @@
 					USE_FILE32API,
 					CC_TARGET_OS_IPHONE,
 					"CC_ENABLE_CHIPMUNK_INTEGRATION=1",
+					"CC_ENABLE_BULLET_INTEGRATION=1",
+					"CC_USE_3D_PHYSICS=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios",
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios/Simulation",
+					"$(SRCROOT)/../cocos2d/external",
+					"$(SRCROOT)/../cocos2d/cocos",
+					"$(SRCROOT)/../cocos2d/extensions",
+					"$(SRCROOT)/../Classes",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
