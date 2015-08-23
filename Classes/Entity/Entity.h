@@ -44,6 +44,7 @@ protected:
 
 	//Sprite3D or Sprite
 	Node*	m_Appearence;
+	Physics3DRigidBody*	m_RigidBody;
 
 	static Entity*	sPlayer;
 };

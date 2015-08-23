@@ -27,8 +27,8 @@ void QteSystem::destroy()
 QteSystem::QteSystem(Node* node) 
 	: mState(QTE_STATE::QS_INACTIVE)
 	, mSceneNode(node)
-	, mCurrInfo(nullptr)
-	, mPreSetInfo(nullptr)
+	, m_CallBackFunc(nullptr)
+//	, mPreSetInfo(nullptr)
 {
 	//TODO: load qte info
 }
@@ -43,23 +43,27 @@ QteSystem::~QteSystem()
 	mQteMap.clear();
 }
 
-//The predeifned event
-void QteSystem::trigger(const std::string& qteName, std::function<void(QTE_Result)> func)
+void QteSystem::trigger(const std::string& qteName, QTE_CALLBACK_FUNC func)
 {
-	assert(mPreSetInfo == nullptr);
+	assert(false);
+	assert(mCurrInfo.mActive);
 
-	//TODO: how we set the params ?
-	mPreSetInfo = new QteInfo();
-	mPreSetInfo->mType = QTE_TYPE::QTE_Click;
-	trigger(mPreSetInfo);
+	//Find the predeifned event
+// 	mPreSetInfo->mType = QTE_TYPE::QTE_Click;
+/*	trigger(mPreSetInfo);*/
 }
 
-void QteSystem::trigger(const QteInfo* info)
+void QteSystem::trigger(const QteInfo& info,QTE_CALLBACK_FUNC func)
 {
 	assert(mState == QTE_STATE::QS_INACTIVE);
 	mState = QTE_STATE::QS_ACTIVE;
 
+	mResult = QTE_Result::QTE_FAILED;
+	m_CallBackFunc = func;
 	mCurrInfo = info;
+
+	m_TimeScaler.setScaling(mCurrInfo.mMinTimeScale,mCurrInfo.mDuration,false,TimeScalePriority::TSP_QTE);
+
 	if (prepare())
 	{
 		mSceneNode->addChild(mLayer);
@@ -71,26 +75,19 @@ void QteSystem::trigger(const QteInfo* info)
 		assert(false);
 		finish();
 	}
-
-
 }
 
-void QteSystem::forceFinish()
+void QteSystem::forceFinish(QTE_Result result /*= QTE_Result::QTE_FAILED*/)
 {
-	//Force to end QTE
-/*	finish();*/
+	if (mState != QTE_STATE::QS_ACTIVE)
+		return;
+
+	finish();
 }
 
 void QteSystem::finish()
 {
 	mState = QTE_STATE::QS_INACTIVE;
-
-	mCurrInfo = nullptr;
-	if (mPreSetInfo != nullptr)
-	{
-		delete mPreSetInfo;
-		mPreSetInfo = nullptr;
-	}
 
 	mLayer->removeFromParent();
 	assert(mLayer->getReferenceCount() == 1);
@@ -98,13 +95,21 @@ void QteSystem::finish()
 
 	assert(mHander->getReferenceCount() == 1);
 	mHander = nullptr;
+
+	m_TimeScaler.reset();
+
+	if (m_CallBackFunc != nullptr)
+		m_CallBackFunc(mResult);
+
+	m_CallBackFunc = nullptr;
+
 }
 
 bool QteSystem::prepare()
 {
-	if (mCurrInfo->mType == QTE_TYPE::QTE_Click)
+	if (mCurrInfo.mType == QTE_TYPE::QTE_Click)
 	{
-		mHander = QteHandlerStandard::create(mCurrInfo);
+		mHander = QteHandlerStandard::create(&mCurrInfo);
 		mLayer = QteLayerStandard::create();
 	}
 
@@ -117,9 +122,11 @@ void QteSystem::update(float dt)
 		return;
 
 	mHander->update(dt);
+	m_TimeScaler.update(dt);
 
 	if (mHander->isDone())
 	{
+		mResult = mHander->getResult();
 		finishing();
 	}
 }

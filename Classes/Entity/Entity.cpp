@@ -10,7 +10,7 @@ short Entity::ColGroup_Slime = CM_Soldier | CM_Ground | CM_SoldierQTE;
 short Entity::ColGroup_SoldierQTE = CM_Ground | CM_Slime;
 
 
-Entity::Entity() :m_Appearence(nullptr)
+Entity::Entity() :m_Appearence(nullptr), m_RigidBody(nullptr)
 {
 }
 

@@ -14,7 +14,7 @@ bool MainGameScene::init()
         return false;
 
 	getPhysics3DWorld()->setGravity(Vec3(0,-9.8f * 2,0.f));
-	getPhysics3DWorld()->setDebugDrawEnable(true);
+//	getPhysics3DWorld()->setDebugDrawEnable(true);
 
     auto frameSize = Director::getInstance()->getOpenGLView()->getFrameSize();
     auto cam = Camera::createPerspective(60, frameSize.width / frameSize.height,1,2000);
@@ -102,6 +102,8 @@ void MainGameScene::onKeyPress(EventKeyboard::KeyCode code, Event* ev)
 
 void MainGameScene::resetGame()
 {
+	QteSystem::getInstance()->forceFinish();
+
 	for (auto child : mGameLayer->getChildren())
 	{
 		auto ptr = dynamic_cast<Entity*>(child);

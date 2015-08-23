@@ -4,6 +4,7 @@
 #include "cocos2d.h"
 #include "ui/UIWidget.h"
 #include "ui/UIButton.h"
+#include "ui/UICheckBox.h"
 
 USING_NS_CC;
 
@@ -32,6 +33,7 @@ public:
 	void resetGame();
 
 protected:
+	void onUiSetDebugDraw(Ref*, ui::CheckBox::EventType);
 
 	std::function<void(float)>	m_MoveFunc;
 	std::function<void()>		m_AttackFunc;
@@ -44,11 +46,9 @@ protected:
 
 	RefPtr<Node>		m_Hud;
 
-// 	RefPtr<ui::Button>		m_LeftBtn;
-// 	RefPtr<ui::Button>		m_RightBtn;
 	RefPtr<ui::Button>		m_StartBtn;
 	RefPtr<ui::Button>		m_ResetBtn;
-
+	RefPtr<ui::CheckBox>	m_PhysicsDebugDraw;
 
 	//DirectionState		m_DirState;
 	bool	m_Left;

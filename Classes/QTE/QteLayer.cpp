@@ -25,3 +25,17 @@ void QteLayer::begin()
 {
 
 }
+
+bool QteLayer::onTouchBegan(Touch *touch, Event *unused_event)
+{
+	return true;
+}
+
+void QteLayer::onEnter()
+{
+	Layer::onEnter();
+// 
+// 	setTouchEnabled(true);
+// 	setSwallowsTouches(true);
+}
+

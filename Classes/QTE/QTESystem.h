@@ -4,11 +4,15 @@
 #include "cocos2d.h"
 #include "QteLayer.h"
 #include "QteHandler.h"
+#include "QteInfo.h"
+#include "TimeScaler/TimeScaler.h"
 
 USING_NS_CC;
 
 enum class QTE_Result;
 class QteInfo;
+
+typedef  std::function<void(QTE_Result)>  QTE_CALLBACK_FUNC;
 
 class QteSystem{
 CC_CONSTRUCTOR_ACCESS:
@@ -23,16 +27,17 @@ CC_CONSTRUCTOR_ACCESS:
 public:
 	static QteSystem*	getInstance();
 
+	bool isActive()const { return mState == QTE_STATE::QS_ACTIVE; }
+
 	//Use the predefined data
-	void trigger(const std::string& qteName, std::function<void(QTE_Result)> func);
+	void trigger(const std::string& qteName, QTE_CALLBACK_FUNC func = nullptr);
 
 	//Calculating QTE info in runtime
-	void trigger(const class QteInfo*	info);
+	void trigger(const class QteInfo&	info, QTE_CALLBACK_FUNC func = nullptr);
 
 	void update(float dt);
 
-	void forceFinish();
-
+	void forceFinish(QTE_Result result = QTE_Result::QTE_FAILED);
 
 protected:
 
@@ -49,13 +54,14 @@ protected:
 	RefPtr<QteLayer>		mLayer;
 	RefPtr<QteHandler>		mHander;
 
-	QteInfo*				mPreSetInfo;
-	const QteInfo*			mCurrInfo;
+	QTE_Result				mResult;
+	QteInfo					mCurrInfo;
 	std::map<const std::string, QteInfo*>	mQteMap;
 
-	
-
+	QTE_CALLBACK_FUNC		m_CallBackFunc;
 	Node*	mSceneNode;
+
+	TimeScaler			m_TimeScaler;
 	static QteSystem*	sInstance;
 };
 

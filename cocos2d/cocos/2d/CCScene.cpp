@@ -33,6 +33,7 @@ THE SOFTWARE.
 #include "renderer/CCRenderer.h"
 #include "renderer/CCFrameBuffer.h"
 #include "deprecated/CCString.h"
+#include "base/CCScheduler.h"
 
 #if CC_USE_PHYSICS
 #include "physics/CCPhysicsWorld.h"
@@ -349,13 +350,14 @@ void Scene::stepPhysicsAndNavigation(float deltaTime)
 #if CC_USE_3D_PHYSICS && CC_ENABLE_BULLET_INTEGRATION
     if (_physics3DWorld)
     {
-        _physics3DWorld->stepSimulate(deltaTime);
+		float timeScale = Director::getInstance()->getScheduler()->getTimeScale();
+		_physics3DWorld->stepSimulate(deltaTime * timeScale);
     }
 #endif
 #if CC_USE_NAVMESH
     if (_navMesh)
     {
-        _navMesh->update(deltaTime);
+		_navMesh->update(deltaTime);
     }
 #endif
 }

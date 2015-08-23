@@ -17,14 +17,15 @@ enum class QTE_TYPE
 };
 
 class QteInfo{
-	friend class QteHandler;
-	friend class QteSystem;
+// 	friend class QteHandler;
+// 	friend class QteSystem;
+// 	friend class Slime;
 
-CC_CONSTRUCTOR_ACCESS:
+public:
 	QteInfo();
 	~QteInfo();
 	
-protected:
+	bool mActive;
 
 	QTE_TYPE mType;
 

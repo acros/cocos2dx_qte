@@ -23,7 +23,7 @@ protected:
 	void onButtonClick(Ref* ref);
 
 
-	RefPtr<ui::Button>	mTestBtn;
+	RefPtr<ui::Button>	mAttackBtn;
 
 };
 
