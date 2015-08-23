@@ -3,6 +3,7 @@
 QteHandler::QteHandler(const QteInfo* info) 
 	: mQteInfo(info)
 	, mIsFinished(false)
+	, mResult(QTE_Result::QTE_FAILED)
 {
 
 }

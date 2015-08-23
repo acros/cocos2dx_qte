@@ -163,6 +163,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClCompile Include="..\Classes\QTE\QteLayerStandard.cpp" />
     <ClCompile Include="..\Classes\QTE\QTESystem.cpp" />
     <ClCompile Include="..\Classes\Scene\MainGameScene.cpp" />
+    <ClCompile Include="..\Classes\TimeScaler\TimeScaler.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -183,6 +184,7 @@ xcopy "$(ProjectDir)..\Resources" "$(OutDir)" /D /E /I /F /Y
     <ClInclude Include="..\Classes\QTE\QteLayerStandard.h" />
     <ClInclude Include="..\Classes\QTE\QTESystem.h" />
     <ClInclude Include="..\Classes\Scene\MainGameScene.h" />
+    <ClInclude Include="..\Classes\TimeScaler\TimeScaler.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>

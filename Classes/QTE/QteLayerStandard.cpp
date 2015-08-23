@@ -23,10 +23,8 @@ bool QteLayerStandard::init()
 	addChild(page);
 	ui::Helper::doLayout(page);
 
-	mTestBtn = static_cast<ui::Button*>(page->getChildByName("attack"));
-
-	//TODO: DEBUG CODE
-	mTestBtn->addClickEventListener(CC_CALLBACK_1(QteLayerStandard::onButtonClick, this));
+	mAttackBtn = static_cast<ui::Button*>(page->getChildByName("attack"));
+	mAttackBtn->addClickEventListener(CC_CALLBACK_1(QteLayerStandard::onButtonClick, this));
 
 	return true;
 }

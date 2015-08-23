@@ -12,6 +12,6 @@ QteHandlerStandard::~QteHandlerStandard()
 
 void QteHandlerStandard::onGuiCallback()
 {
-
+	mResult = QTE_Result::QTE_SUCCEED;
 	mIsFinished = true;
 }

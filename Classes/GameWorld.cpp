@@ -1,5 +1,6 @@
 #include "GameWorld.h"
 #include "QTE/QTESystem.h"
+#include "physics3d/CCPhysics3D.h"
 
 GameWorld::GameWorld()
 {
@@ -29,6 +30,14 @@ void GameWorld::reset()
 	if (mCurrScene != nullptr)
 	{
 		mCurrScene->resetGame();
+	}
+}
+
+void GameWorld::setPhyiscsDebugDraw(bool state)
+{
+	if (mCurrScene != nullptr)
+	{
+		mCurrScene->getPhysics3DWorld()->setDebugDrawEnable(state);
 	}
 }
 

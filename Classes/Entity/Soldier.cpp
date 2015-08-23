@@ -25,8 +25,8 @@ bool Soldier::init()
 	Physics3DRigidBodyDes rbDes;
 	rbDes.mass = 500.0f;
 	rbDes.shape = Physics3DShape::createCapsule(10.f, 25.f);
-	auto rigidBody = Physics3DRigidBody::create(&rbDes);
-	auto component = Physics3DComponent::create(rigidBody, Vec3(0.f, -20.f, 0.f));
+	m_RigidBody = Physics3DRigidBody::create(&rbDes);
+	auto component = Physics3DComponent::create(m_RigidBody, Vec3(0.f, -20.f, 0.f));
 	component->setBtMask(CM_Soldier);
 	component->setBtGroup(ColGroup_Soilder);
 
@@ -42,7 +42,7 @@ bool Soldier::init()
 
 	//Physics3DGhostObj as volume trigger for QTE
 	Physics3DGhostObjDes qteDes;
-	qteDes.shape = Physics3DShape::createSphere(40.f);
+	qteDes.shape = Physics3DShape::createSphere(100.f);
 	auto ghostBody = Physics3DGhostObj::create(&qteDes);
 
 	auto component2 = Physics3DComponent::create(ghostBody, Vec3(0.f,-10.f, 0.f));
@@ -53,11 +53,15 @@ bool Soldier::init()
 	component2->syncNodeToPhysics();
 	component2->setSyncFlag(Physics3DComponent::PhysicsSyncFlag::NODE_TO_PHYSICS);
 
+
 //	rigidBody->setCollisionCallback(CC_CALLBACK_1(Soldier::hitCallback,this));
 //	ghostBody->setCollisionCallback(CC_CALLBACK_1(Soldier::qteTriggerCallback, this));
 
-	rigidBody->setMask(CM_Soldier);
+	m_RigidBody->setMask(CM_Soldier);
 	ghostBody->setMask(CM_SoldierQTE);
+
+	m_RigidBody->setUserData(this);
+	ghostBody->setUserData(this);
 
 	m_Appearence = sprite;
 	addChild(m_Appearence);
@@ -67,9 +71,9 @@ bool Soldier::init()
 	m_WalkAnim = Animate3D::createWithFrames(animData, 227, 246);
 	
 	//Register frame event in Attack Anim
-	auto temp= Animate3dWithEvent::createWithFrames(animData, 170, 220);
-	temp->registerEventOnFrame(180, CC_CALLBACK_0(Soldier::attackFrameCall, this, true));
-	temp->registerEventOnFrame(200, CC_CALLBACK_0(Soldier::attackFrameCall, this, false));
+	auto temp= Animate3dWithEvent::createWithFrames(animData, 180, 220);
+// 	temp->registerEventOnFrame(195, CC_CALLBACK_0(Soldier::attackFrameCall, this, true));
+// 	temp->registerEventOnFrame(200, CC_CALLBACK_0(Soldier::attackFrameCall, this, false));
 	m_AttackAnim = temp;
 
 	temp = Animate3dWithEvent::createWithFrames(animData, 110, 140);
@@ -77,6 +81,8 @@ bool Soldier::init()
 
 	m_IdleAnim = Animate3D::createWithFrames(animData, 267, 283);
 	m_IdleAnimAction = createAnimAction(m_IdleAnim,true);
+
+	m_KnockAnim = Animate3D::createWithFrames(animData, 81, 87);
 
 	m_Appearence->runAction(m_IdleAnimAction);
 
@@ -159,5 +165,11 @@ void Soldier::qteTriggerCallback(const Physics3DCollisionInfo &ci)
 	{
 		CCLOG("Ouch,QTE!!!!");
 	}
+}
+
+void Soldier::doHurt()
+{
+	m_Appearence->stopActionByTag(ACTION_ANIMATION);
+	m_Appearence->runAction(createAnimAction(m_KnockAnim, false));
 }
 

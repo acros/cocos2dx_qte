@@ -23,6 +23,7 @@ public:
 
 	void movePos(float dm);
 	void doAttack();
+	void doHurt();
 
 protected:
 	

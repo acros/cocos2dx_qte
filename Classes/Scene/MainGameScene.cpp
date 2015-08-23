@@ -14,7 +14,6 @@ bool MainGameScene::init()
         return false;
 
 	getPhysics3DWorld()->setGravity(Vec3(0,-9.8f * 2,0.f));
-	getPhysics3DWorld()->setDebugDrawEnable(true);
 
     auto frameSize = Director::getInstance()->getOpenGLView()->getFrameSize();
     auto cam = Camera::createPerspective(60, frameSize.width / frameSize.height,1,2000);
@@ -113,4 +112,8 @@ void MainGameScene::resetGame()
             ptr->resetGame();
         }
     }
+    
+    QteSystem::getInstance()->forceFinish();
 }
+
+

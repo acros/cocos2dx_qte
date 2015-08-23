@@ -12,7 +12,11 @@ CC_CONSTRUCTOR_ACCESS:
 	QteLayer();
 	virtual ~QteLayer();
 
-//	virtual bool init()override;
+	virtual void onEnter()override;
+
+	virtual bool onTouchBegan(Touch *touch, Event *unused_event)override;
+	virtual void onTouchMoved(Touch *touch, Event *unused_event)override	{}
+	virtual void onTouchEnded(Touch *touch, Event *unused_event)override	{}
 
 public:
 	void prepare(QteHandler* handler);

@@ -17,6 +17,8 @@ public:
 
 	void reset();
 
+	void setPhyiscsDebugDraw(bool state);
+
 protected:
 
 	RefPtr<MainGameScene>		mCurrScene;

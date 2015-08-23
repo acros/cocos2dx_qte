@@ -37,8 +37,11 @@ public:
 
 	virtual bool isDone();
 
+	QTE_Result getResult()const { return mResult; }
+
 protected:
 	bool		mIsFinished;
+	QTE_Result	mResult;
 
 	//TSR - TimeScaleRate
 	float		mCurrTSR;

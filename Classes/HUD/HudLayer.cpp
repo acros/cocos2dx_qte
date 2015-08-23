@@ -30,20 +30,14 @@ bool HudLayer::init()
 	addChild(m_Hud);
 	ui::Helper::doLayout(m_Hud);
 
-// 	m_LeftBtn = static_cast<ui::Button*>(m_Hud->getChildByName("global_anchor_lb")->getChildByName("Btn_Left"));
-// 	m_LeftBtn->addTouchEventListener(CC_CALLBACK_2(HudLayer::onLeftControlTouch, this));
-
-// 	m_RightBtn = static_cast<ui::Button*>(m_Hud->getChildByName("global_anchor_rb")->getChildByName("Btn_Right"));
-// 	m_RightBtn->addTouchEventListener(CC_CALLBACK_2(HudLayer::onRightControlTouch, this));
-	
-//	m_AttackBtn = static_cast<ui::Button*>(m_Hud->getChildByName("global_anchor_rb")->getChildByName("Btn_Attack"));
-//	m_AttackBtn->addClickEventListener(CC_CALLBACK_1(HudLayer::onAttackBtnClick, this));
-
 	m_StartBtn = static_cast<ui::Button*>(m_Hud->getChildByName("global_anchor_rb")->getChildByName("startBtn"));
 	m_StartBtn->addClickEventListener(CC_CALLBACK_1(HudLayer::onEnemyAttack, this));
 
 	m_ResetBtn = static_cast<ui::Button*>(m_Hud->getChildByName("global_anchor_rb")->getChildByName("resetBtn"));
 	m_ResetBtn->addClickEventListener(CC_CALLBACK_0(HudLayer::resetGame, this));
+
+	m_PhysicsDebugDraw = static_cast<ui::CheckBox*>(m_Hud->getChildByName("global_anchor_rb")->getChildByName("PhysicsDebugDraw"));
+	m_PhysicsDebugDraw->addEventListener(CC_CALLBACK_2(HudLayer::onUiSetDebugDraw,this));
 
 	scheduleUpdate();
 
@@ -129,5 +123,15 @@ void HudLayer::setEnemyAttack(std::function<void()> enemyAttackCallBack)
 void HudLayer::resetGame()
 {
 	AppDelegate::getGameWorld().reset(); 
+}
+
+void HudLayer::onUiSetDebugDraw(Ref* ref, ui::CheckBox::EventType e)
+{
+	if (e == ui::CheckBox::EventType::SELECTED)
+		AppDelegate::getGameWorld().setPhyiscsDebugDraw(true);
+	else if (e == ui::CheckBox::EventType::UNSELECTED)
+		AppDelegate::getGameWorld().setPhyiscsDebugDraw(false);
+	else
+		assert(false);
 }
 
