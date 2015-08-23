@@ -32,7 +32,7 @@
             <PrePosition />
             <PreSize />
           </AbstractNodeData>
-          <AbstractNodeData Name="global_anchor_rb" ActionTag="-1476882163" Tag="39" IconVisible="True" PositionPercentXEnabled="True" LeftMargin="1136.0000" TopMargin="640.0000" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="global_anchor_rb" ActionTag="-1476882163" Tag="39" IconVisible="True" HorizontalEdge="RightEdge" VerticalEdge="BottomEdge" LeftMargin="1136.0000" TopMargin="640.0000" ctype="SingleNodeObjectData">
             <Size />
             <Children>
               <AbstractNodeData Name="resetBtn" ActionTag="-1221430212" Tag="11" IconVisible="False" LeftMargin="-287.0681" RightMargin="251.0681" TopMargin="-121.3304" BottomMargin="84.3304" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="11" RightEage="11" TopEage="11" BottomEage="11" Scale9OriginX="11" Scale9OriginY="11" Scale9Width="14" Scale9Height="15" OutlineSize="0" ShadowOffsetX="0" ShadowOffsetY="0" ctype="ButtonObjectData">

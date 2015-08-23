@@ -24,14 +24,5 @@
         <EnableHTML5Advanced Value="False" />
       </Value>
     </Item>
-    <Item Key="TabsParamsKey">
-      <Value ctype="TabsInfo">
-        <OpenedDocuments>
-          <FilePathData Path="QTE_Layout.csd" />
-          <FilePathData Path="HUD.csd" />
-        </OpenedDocuments>
-        <ActiveDocument Path="HUD.csd" />
-      </Value>
-    </Item>
   </Properties>
 </UserData>
