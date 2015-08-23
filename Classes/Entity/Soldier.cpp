@@ -24,9 +24,9 @@ bool Soldier::init()
 	//Prepare for Physics
 	Physics3DRigidBodyDes rbDes;
 	rbDes.mass = 500.0f;
-	rbDes.shape = Physics3DShape::createCapsule(10.f, 25.f);
+	rbDes.shape = Physics3DShape::createCapsule(15.f, 25.f);
 	m_RigidBody = Physics3DRigidBody::create(&rbDes);
-	auto component = Physics3DComponent::create(m_RigidBody, Vec3(0.f, -20.f, 0.f));
+	auto component = Physics3DComponent::create(m_RigidBody, Vec3(0.f, -25.f, 0.f));
 	component->setBtMask(CM_Soldier);
 	component->setBtGroup(ColGroup_Soilder);
 
