@@ -1,0 +1,1 @@
+Copy cocos2d-x-3.7 engine files to this folder.

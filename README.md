@@ -1,5 +1,5 @@
 # cocos2dx_qte
-A game QTE (Quick Time Event) implement based on cocos2d-x
+A game QTE (Quick Time Event) implement (Based on cocos2d-x-3.7)
 
 Press button "Start", slime will attack the soldier, while colliding with the bounding box, QTE triggered,
 press "battle" icon to do the reaction, or you will fail this event.
